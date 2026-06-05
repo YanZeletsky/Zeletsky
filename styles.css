@@ -245,11 +245,23 @@
     /* ══════════════════════════════════════
        🎴 Портфолио
        ══════════════════════════════════════ */
-    .portfolio__filters {
-      position:relative; z-index:3;
-      display:flex; justify-content:center; gap:1.5rem;
-      padding:3rem 1.5rem; flex-wrap:wrap;
-    }
+   .portfolio__filters {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 3rem 1.5rem;
+  flex-wrap: nowrap;                 /* ← не переносить на новую строку */
+  overflow-x: auto;                  /* ← горизонтальный скролл */
+  -webkit-overflow-scrolling: touch; /* ← плавный скролл на iOS */
+  scrollbar-width: none;             /* ← скрыть полосу прокрутки Firefox */
+  -ms-overflow-style: none;          /* ← скрыть полосу прокрутки IE/Edge */
+}
+
+.portfolio__filters::-webkit-scrollbar {
+  display: none;                     /* ← скрыть полосу прокрутки Chrome/Safari */
+}
     .portfolio__filter {
       font-family:var(--font-main); font-size:.95rem; font-weight:500;
       color:var(--color-filter-inactive); background:none; border:none;
