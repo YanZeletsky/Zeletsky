@@ -262,12 +262,21 @@
 .portfolio__filters::-webkit-scrollbar {
   display: none;                     /* ← скрыть полосу прокрутки Chrome/Safari */
 }
-    .portfolio__filter {
-      font-family:var(--font-main); font-size:.95rem; font-weight:500;
-      color:var(--color-filter-inactive); background:none; border:none;
-      cursor:pointer; padding:.3rem 0; position:relative;
-      outline:none; -webkit-tap-highlight-color:transparent;
-    }
+   .portfolio__filter {
+  font-family: var(--font-main);
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--color-filter-inactive);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .3rem 0;
+  position: relative;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;              /* ← запрет переноса текста */
+  flex-shrink: 0;                   /* ← кнопка не сжимается */
+}
     .portfolio__filter:focus,
     .portfolio__filter:focus-visible { outline:none; }
     .portfolio__filter::after {
