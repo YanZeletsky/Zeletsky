@@ -262,6 +262,14 @@
 .portfolio__filters::-webkit-scrollbar {
   display: none;                     /* ← скрыть полосу прокрутки Chrome/Safari */
 }
+/* ПК: по центру, без скролла */
+@media (min-width: 768px) {
+  .portfolio__filters {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
    .portfolio__filter {
   font-family: var(--font-main);
   font-size: .95rem;
