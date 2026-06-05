@@ -265,13 +265,20 @@
 
     // данные проектов — здесь живут описания для попапа
    const projects = {
-  1: { title:'Miloslava Family', type:'Логотип', description:'Айдентика для семейного бренда.', details:'', link:'', image:'img/Miloslava.svg', hasLink: false },
-  2: { title:'Polchkova', type:'Логотип', description:'Персональный логотип.', details:'', link:'', image:'img/Polchkova.svg', hasLink: false },
-  3: { title:'InCube', type:'Логотип', description:'Логотип для технологичного бренда.', details:'', link:'', image:'img/InCube_color.svg', hasLink: false },
-  4: { title:'Здравница', type:'Логотип', description:'Айдентика для санатория.', details:'', link:'', image:'img/Food.png', hasLink: false },
-  5: { title:'EcoFind', type:'Логотип', description:'Логотип для экологического сервиса.', details:'', link:'', image:'img/EcoFind.svg', hasLink: false },
-  6: { title:'MaYoga', type:'Логотип', description:'Айдентика для йога-студии.', details:'', link:'', image:'img/MaYoga.svg', hasLink: false },
-  7: { title:'ЖивФуд', type:'Логотип', description:'Логотип для бренда здорового питания.', details:'', link:'', image:'img/Food_more.png', hasLink: false }
+  1:  { title:'MicroPlant', type:'UX/UI', description:'Интерфейс для выращивания микрозелени.', details:'', link:'https://microplantpro.netlify.app/', image:'', hasLink: true },
+  2:  { title:'Сновидец', type:'UX/UI', description:'Приложение для осознанных сновидений.', details:'', link:'#', image:'', hasLink: true },
+  3:  { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
+  4:  { title:'Miloslava Family', type:'Логотип', description:'Айдентика для семейного бренда.', details:'', link:'', image:'img/Miloslava.svg', hasLink: false },
+  5:  { title:'Polchkova', type:'Логотип', description:'Персональный логотип.', details:'', link:'', image:'img/Polchkova.svg', hasLink: false },
+  6:  { title:'InCube', type:'Логотип', description:'Логотип для технологичного бренда.', details:'', link:'', image:'img/InCube_color.svg', hasLink: false },
+  7:  { title:'Здравница', type:'Логотип', description:'Айдентика для санатория.', details:'', link:'', image:'img/Food.png', hasLink: false },
+  8:  { title:'EcoFind', type:'Логотип', description:'Логотип для экологического сервиса.', details:'', link:'', image:'img/EcoFind.svg', hasLink: false },
+  9:  { title:'MaYoga', type:'Логотип', description:'Айдентика для йога-студии.', details:'', link:'', image:'img/MaYoga.svg', hasLink: false },
+  10: { title:'ЖивФуд', type:'Логотип', description:'Логотип для бренда здорового питания.', details:'', link:'', image:'img/Food_more.png', hasLink: false },
+  11: { title:'Тишина', type:'Афиши', description:'Серия из 5 плакатов для фестиваля современного искусства.', details:'Печать, цифровой формат', link:'', image:'', hasLink: false },
+  12: { title:'Ритм', type:'Афиши', description:'Визуальная айдентика для серии джазовых концертов.', details:'Афиши, баннеры, соцсети', link:'', image:'', hasLink: false },
+  13: { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
+  14: { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
 };
 
     const popup = document.getElementById('popup');
@@ -285,9 +292,21 @@
       popup.querySelector('.popup__type').textContent = p.type;
       popup.querySelector('.popup__description').textContent = p.description;
       popup.querySelector('.popup__details').textContent = p.details;
-      popup.querySelector('.popup__link').href = p.link;
-      popup.querySelector('.popup__image').src = p.image;
-      popup.querySelector('.popup__image').alt = p.title;
+      const linkEl = popup.querySelector('.popup__link');
+      if (p.hasLink && p.link) {
+        linkEl.href = p.link;
+        linkEl.style.display = '';
+      } else {
+        linkEl.style.display = 'none';
+      }
+      const imgEl = popup.querySelector('.popup__image');
+      if (p.image) {
+        imgEl.src = p.image;
+        imgEl.alt = p.title;
+        imgEl.style.display = '';
+      } else {
+        imgEl.style.display = 'none';
+      }
       popup.classList.add('popup--open');
       document.body.style.overflow = 'hidden';
     }
