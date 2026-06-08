@@ -264,21 +264,19 @@
        ══════════════════════════════════════ */
 
     // данные проектов — здесь живут описания для попапа
-   const projects = {
+  const projects = {
   1:  { title:'MicroPlant', type:'UX/UI', description:'Интерфейс для выращивания микрозелени.', details:'', link:'https://microplantpro.netlify.app/', image:'', hasLink: true },
   2:  { title:'Сновидец', type:'UX/UI', description:'Приложение для осознанных сновидений.', details:'', link:'#', image:'', hasLink: true },
   3:  { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
-  4:  { title:'Miloslava Family', type:'Логотип', description:'Айдентика для семейного бренда.', details:'', link:'', image:'img/Miloslava.svg', hasLink: false },
-  5:  { title:'Polchkova', type:'Логотип', description:'Персональный логотип.', details:'', link:'', image:'img/Polchkova.svg', hasLink: false },
-  6:  { title:'InCube', type:'Логотип', description:'Логотип для технологичного бренда.', details:'', link:'', image:'img/InCube_color.svg', hasLink: false },
-  7:  { title:'Здравница', type:'Логотип', description:'Айдентика для санатория.', details:'', link:'', image:'img/Food.png', hasLink: false },
-  8:  { title:'EcoFind', type:'Логотип', description:'Логотип для экологического сервиса.', details:'', link:'', image:'img/EcoFind.svg', hasLink: false },
-  9:  { title:'MaYoga', type:'Логотип', description:'Айдентика для йога-студии.', details:'', link:'', image:'img/MaYoga.svg', hasLink: false },
-  10: { title:'ЖивФуд', type:'Логотип', description:'Логотип для бренда здорового питания.', details:'', link:'', image:'img/Food_more.png', hasLink: false },
+  4:  { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
+  5:  { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
+  6:  { title:'Miloslava Family', type:'Логотип', description:'Айдентика для семейного бренда.', details:'', link:'', image:'img/Miloslava.svg', hasLink: false },
+  7:  { title:'Polchkova', type:'Логотип', description:'Персональный логотип.', details:'', link:'', image:'img/Polchkova.svg', hasLink: false },
+  8:  { title:'InCube', type:'Логотип', description:'Логотип для технологичного бренда.', details:'', link:'', image:'img/InCube_color.svg', hasLink: false },
+  9:  { title:'EcoFind', type:'Логотип', description:'Логотип для экологического сервиса.', details:'', link:'', image:'img/EcoFind.svg', hasLink: false },
+  10: { title:'MaYoga', type:'Логотип', description:'Айдентика для йога-студии.', details:'', link:'', image:'img/MaYoga.svg', hasLink: false },
   11: { title:'Тишина', type:'Афиши', description:'Серия из 5 плакатов для фестиваля современного искусства.', details:'Печать, цифровой формат', link:'', image:'', hasLink: false },
-  12: { title:'Ритм', type:'Афиши', description:'Визуальная айдентика для серии джазовых концертов.', details:'Афиши, баннеры, соцсети', link:'', image:'', hasLink: false },
-  13: { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
-  14: { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
+  12: { title:'Ритм', type:'Афиши', description:'Визуальная айдентика для серии джазовых концертов.', details:'Афиши, баннеры, соцсети', link:'', image:'', hasLink: false }
 };
 
     const popup = document.getElementById('popup');
