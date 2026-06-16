@@ -265,18 +265,102 @@
 
     // данные проектов — здесь живут описания для попапа
   const projects = {
-  1:  { title:'MicroPlant', type:'UX/UI', description:'Интерфейс для выращивания микрозелени.', details:'', link:'https://microplantpro.netlify.app/', image:'', hasLink: true },
-  2:  { title:'Сновидец', type:'UX/UI', description:'Приложение для осознанных сновидений.', details:'', link:'#', image:'', hasLink: true },
-  3:  { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
-  4:  { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
-  5:  { title:'Название проекта', type:'Сайт', description:'', details:'', link:'', image:'', hasLink: false },
-  6:  { title:'Miloslava Family', type:'Логотип', description:'Айдентика для семейного бренда.', details:'', link:'', image:'img/Miloslava.svg', hasLink: false },
-  7:  { title:'Polchkova', type:'Логотип', description:'Персональный логотип.', details:'', link:'', image:'img/Polchkova.svg', hasLink: false },
-  8:  { title:'InCube', type:'Логотип', description:'Логотип для технологичного бренда.', details:'', link:'', image:'img/InCube_color.svg', hasLink: false },
-  9:  { title:'EcoFind', type:'Логотип', description:'Логотип для экологического сервиса.', details:'', link:'', image:'img/EcoFind.svg', hasLink: false },
-  10: { title:'MaYoga', type:'Логотип', description:'Айдентика для йога-студии.', details:'', link:'', image:'img/MaYoga.svg', hasLink: false },
-  11: { title:'Тишина', type:'Афиши', description:'Серия из 5 плакатов для фестиваля современного искусства.', details:'Печать, цифровой формат', link:'', image:'', hasLink: false },
-  12: { title:'Ритм', type:'Афиши', description:'Визуальная айдентика для серии джазовых концертов.', details:'Афиши, баннеры, соцсети', link:'', image:'', hasLink: false }
+  1:  {
+    title: 'MicroPlant',
+    type: 'UX/UI',
+    description: 'Интерактивный HTML-прототип ERP-системы для фермы микрозелени. Проект охватывает полный цикл: от посева и контроля партий до закупок сырья, отгрузки клиентам и передачи смены.\n\n5 ролей с разным уровнем доступа — от дашборда управляющего до чеклиста сотрудника смены. Адаптивная вёрстка: таблицы трансформируются в карточки на мобилке, метрики перестраиваются в 2×2 грид, фильтры — горизонтальный слайдер.\n\n11 экранов, переключение ролей, интерактивные чеклисты, графики на Chart.js, модальные формы.',
+    details: 'UX/UI-дизайн · дизайн-система · HTML/CSS/JS · Chart.js · Figma',
+    image: '',
+    links: [
+      { label: 'Открыть прототип →', url: 'https://yanzeletsky.github.io/MicroPlant/' },
+      { label: 'Макеты в Figma →', url: 'https://www.figma.com/design/TsGesv1eTUmB83RZGk29Br/' }
+    ]
+  },
+  2:  {
+    title: 'Сновидец',
+    type: 'UX/UI',
+    description: 'Концепт iOS-приложения для людей, практикующих осознанные сновидения. Запись снов текстом или голосом, отслеживание осознанности, аналитика паттернов и AI-визуализация сновидений.\n\nТёмная тема, glassmorphism, дизайн-система с токенами (фиолетовый #8B5CF6, бирюза, янтарь). Цветовая кодировка карточек по типу сна, аккордеон для параметров, iOS-паттерны (Dynamic Island, Safe Area).\n\n8 экранов с полным пользовательским путём: от загрузки до AI-генерации сцен. Интерактивный прототип с кликабельной навигацией.',
+    details: 'UX/UI-дизайн · дизайн-система · прототипирование · HTML/CSS/JS · iOS HIG',
+    image: '',
+    links: [
+      { label: 'Открыть прототип →', url: 'https://yanzeletsky.github.io/Dreamer/' },
+      { label: 'Макеты в Figma →', url: 'https://www.figma.com/design/fu4q5MCENUOrGwZUoZZAPe/' }
+    ]
+  },
+  3:  {
+    title: 'YogaTravelLife',
+    type: 'Сайт',
+    description: 'Сайт для двух взаимодополняющих проектов преподавателя йоги Марины Полчковой: онлайн-студия «MaYoga» и йога-путешествия «Yoga-travel-life».\n\nMaYoga — онлайн-студия, где практика встраивается в ритм жизни: библиотека уроков, живые занятия, обратная связь и поддерживающее комьюнити. Yoga-travel-life — йога-путешествия, где практика выходит за стены и смешивается с духом приключений.\n\nДва проекта — две стороны одной медали: регулярная работа над собой и трансформирующий опыт выхода из зоны комфорта.',
+    details: 'Веб-дизайн · вёрстка · адаптив',
+    image: '',
+    links: [
+      { label: 'Открыть сайт →', url: 'https://yoga-travel-life.ru/' }
+    ]
+  },
+  4:  {
+    title: 'Эпишик',
+    type: 'Сайт',
+    description: 'Лендинг для студии лазерной эстетики EPISHIK в Зеленограде. Студия для мужчин и женщин — профессиональные мастера, современное оборудование (Diode Laser), индивидуальный подбор параметров после диагностики кожи.\n\nАкцент на преимуществах лазерной эпиляции: долговременный эффект, экономия времени, комфорт и безопасность процедуры благодаря охлаждению и анестетикам.',
+    details: 'Веб-дизайн · Figma · прототипирование',
+    image: '',
+    links: [
+      { label: 'Прототип в Figma →', url: 'https://www.figma.com/proto/eBAF92HhgSqzkDngjKaXrT/' },
+      { label: 'Дизайн в Figma →', url: 'https://www.figma.com/design/eBAF92HhgSqzkDngjKaXrT/' }
+    ]
+  },
+  5:  {
+    title: 'InCube',
+    type: 'Сайт',
+    description: 'Сайт для инди-студии веб-разработки InCube. Дизайн и разработка — от сайтов на WordPress до уникального дизайна на чистом коде.\n\nУслуги: вёрстка на WordPress (лендинги, интернет-магазины), дизайн в Figma, настройка SEO и таргета, разработка на чистом коде, генерация AI-контента.',
+    details: 'Веб-дизайн · Figma · прототипирование',
+    image: '',
+    links: [
+      { label: 'Прототип в Figma →', url: 'https://www.figma.com/proto/CgTOcYW52bdAbfPWvsO7va/' },
+      { label: 'Дизайн в Figma →', url: 'https://www.figma.com/design/CgTOcYW52bdAbfPWvsO7va/' }
+    ]
+  },
+  6:  { title:'Miloslava Family', type:'Логотип', description:'Айдентика для семейного бренда.', details:'', image:'img/Miloslava.svg', links:[] },
+  7:  { title:'Polchkova', type:'Логотип', description:'Персональный логотип.', details:'', image:'img/Polchkova.svg', links:[] },
+  8:  { title:'InCube', type:'Логотип', description:'Логотип для технологичного бренда.', details:'', image:'img/InCube_color.svg', links:[] },
+  9:  { title:'EcoFind', type:'Логотип', description:'Логотип для экологического сервиса.', details:'', image:'img/EcoFind.svg', links:[] },
+  10: { title:'MaYoga', type:'Логотип', description:'Айдентика для йога-студии.', details:'', image:'img/MaYoga.svg', links:[] },
+  11: { title:'Горячая ночь', type:'Афиша', description:'Афиша вечеринки для Fat Cat Club. Тёмная стилистика, типографика по кругу, яркий оранжевый акцент.', details:'Графический дизайн · афиша', image:'img/Горячая_ночь.png', links:[] },
+  12: { title:'Коротко', type:'Баннер', description:'Промо-баннер для оффлайн-сервиса ясной речи «Коротко». Акционное предложение со скидкой, QR-код, иллюстрация.', details:'Графический дизайн · баннер', image:'img/Коротко.png', links:[] },
+  13: {
+    title: 'Miloslava Family',
+    type: 'Сайт',
+    description: 'Интернет-магазин эко-вещей для семьи. Описание уточняется.',
+    details: 'Веб-дизайн · вёрстка',
+    image: '',
+    links: [
+      { label: 'Открыть сайт →', url: 'https://www.miloslavafamily.ru/' }
+    ]
+  },
+  14: {
+    title: 'NewAgeSchool',
+    type: 'Сайт',
+    description: 'Сайт дистанционной школы NewAgeSchool — онлайн-образование без политических границ. 500+ учеников, 44% из-за рубежа, 4 года работы.\n\nНаправления: математика, кодинг, английский, физика. Коучинговый подход, практико-ориентированность, преподавание на двух языках (русский и английский).\n\nИндивидуальные образовательно-карьерные треки, подготовка к олимпиадам и экзаменам, развитие коммуникативных навыков.',
+    details: 'Веб-дизайн · вёрстка · адаптив',
+    image: '',
+    links: [
+      { label: 'Открыть сайт →', url: 'https://www.newage.school/' }
+    ]
+  },
+  15: {
+    title: 'Ульяна Коретковская',
+    type: 'Сайт',
+    description: 'Сайт студии эстетики лица и тела Ульяны Коретковской. Описание уточняется.',
+    details: 'Веб-дизайн · вёрстка',
+    image: '',
+    links: [
+      { label: 'Открыть сайт →', url: 'https://ulyanakoretkowska.ru/' }
+    ]
+  },
+  16: { title:'Прогулки в лесу', type:'Афиша', description:'Афиша зимнего мероприятия «Прогулки в лесу». AI-иллюстрация зимнего леса, типографика, коллаборация Зеленоград × Щепка.', details:'Графический дизайн · афиша', image:'img/Прогулки_в_лесу.png', links:[] },
+  17: { title:'Чебатков', type:'Афиша', description:'Афиша стендап-концерта Евгения Чебаткова «На других берегах». Сургут, Дворец Нефтяников. Совместный проект с Юмор FM.', details:'Графический дизайн · афиша', image:'img/Чебатков.png', links:[] },
+  18: { title:'Скоро', type:'Афиша', description:'', details:'', image:'', links:[] },
+  19: { title:'Скоро', type:'Афиша', description:'', details:'', image:'', links:[] },
+  20: { title:'Сплав по реке Тверца', type:'Афиша', description:'Афиша SUP-сплава по реке Тверца. Маршрут Торжок — Тверь, сапборд, природа, команда, приключение.', details:'Графический дизайн · афиша', image:'img/Сплав_по_реке_Тверца.png', links:[] }
 };
 
     const popup = document.getElementById('popup');
@@ -290,20 +374,29 @@
       popup.querySelector('.popup__type').textContent = p.type;
       popup.querySelector('.popup__description').textContent = p.description;
       popup.querySelector('.popup__details').textContent = p.details;
-      const linkEl = popup.querySelector('.popup__link');
-      if (p.hasLink && p.link) {
-        linkEl.href = p.link;
-        linkEl.style.display = '';
-      } else {
-        linkEl.style.display = 'none';
+
+      // ссылки — рендерим из массива
+      const linksEl = popup.querySelector('.popup__links');
+      linksEl.innerHTML = '';
+      if (p.links && p.links.length) {
+        p.links.forEach(link => {
+          const a = document.createElement('a');
+          a.className = 'popup__link';
+          a.href = link.url;
+          a.target = '_blank';
+          a.textContent = link.label;
+          linksEl.appendChild(a);
+        });
       }
+
       const imgEl = popup.querySelector('.popup__image');
+      const imgWrapper = popup.querySelector('.popup__logo-wrapper');
       if (p.image) {
         imgEl.src = p.image;
         imgEl.alt = p.title;
-        imgEl.style.display = '';
+        imgWrapper.style.display = '';
       } else {
-        imgEl.style.display = 'none';
+        imgWrapper.style.display = 'none';
       }
       popup.classList.add('popup--open');
       document.body.style.overflow = 'hidden';
@@ -323,19 +416,49 @@
       const grid = document.querySelector('.portfolio__grid');
       if (!fc || !grid) return;
 
+      // начальное состояние — показать только UX/UI
+      grid.querySelectorAll('.card').forEach(c => c.classList.toggle('card--hidden', c.dataset.category !== 'uxui'));
+
       // фильтры
       fc.addEventListener('click', (e) => {
         const btn = e.target.closest('.portfolio__filter');
         if (!btn) return;
         const cat = btn.dataset.filter;
         fc.querySelectorAll('.portfolio__filter').forEach(f => f.classList.toggle('portfolio__filter--active', f === btn));
-        grid.querySelectorAll('.card').forEach(c => c.classList.toggle('card--hidden', cat !== 'all' && c.dataset.category !== cat));
+        grid.querySelectorAll('.card').forEach(c => c.classList.toggle('card--hidden', c.dataset.category !== cat));
+        // режим сетки для афиш
+        grid.classList.toggle('portfolio__grid--posters', cat === 'posters');
       });
 
-      // клик по карточке → попап
+      // клик по карточке → попап или лайтбокс
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('.lightbox__img');
+
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightbox.classList.add('lightbox--open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        lightbox.classList.remove('lightbox--open');
+        document.body.style.overflow = '';
+      }
+      lightbox.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
       grid.addEventListener('click', (e) => {
         const card = e.target.closest('.card');
         if (!card) return;
+        // афиши — лайтбокс
+        const posterImg = card.querySelector('.card__poster-img');
+        if (posterImg) {
+          openLightbox(posterImg.src, posterImg.alt);
+          return;
+        }
+        // заглушки — ничего
+        if (card.classList.contains('card--poster-placeholder')) return;
+        // остальное — попап
         openPopup(card.dataset.projectId);
       });
     });

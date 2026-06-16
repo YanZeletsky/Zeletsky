@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ян Зелецкий — дизайнер. UX/UI, веб-дизайн, графический дизайн. Проектирую интерфейсы, прототипирую кодом.">
+  <meta name="author" content="Ян Зелецкий">
+  <meta property="og:title" content="Ян Зелецкий — дизайнер">
+  <meta property="og:description" content="UX/UI, веб-дизайн, графический дизайн. Проектирую интерфейсы, прототипирую кодом.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
   <title>Ян Зелецкий — дизайнер</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -27,8 +33,7 @@
   </section>
 
   <div class="portfolio__filters">
-    <button class="portfolio__filter portfolio__filter--active" data-filter="all">Всё</button>
-    <button class="portfolio__filter" data-filter="uxui">UX/UI</button>
+    <button class="portfolio__filter portfolio__filter--active" data-filter="uxui">UX/UI</button>
     <button class="portfolio__filter" data-filter="web">Сайты</button>
     <button class="portfolio__filter" data-filter="logos">Логотипы</button>
     <button class="portfolio__filter" data-filter="posters">Афиши</button>
@@ -39,27 +44,42 @@
       <div class="card" data-project-id="1" data-category="uxui">
         <span class="card__type">UX/UI</span>
         <h3 class="card__title">MicroPlant</h3>
-        <p class="card__essence">Интерфейс для выращивания микрозелени</p>
+        <p class="card__essence">ERP-система для фермы микрозелени. 5 ролей, 11 экранов</p>
       </div>
       <div class="card" data-project-id="2" data-category="uxui">
         <span class="card__type">UX/UI</span>
         <h3 class="card__title">Сновидец</h3>
-        <p class="card__essence">Приложение для осознанных сновидений</p>
+        <p class="card__essence">Концепт приложения для осознанных сновидений. 8 экранов, glassmorphism</p>
       </div>
       <div class="card" data-project-id="3" data-category="web">
         <span class="card__type">Сайт</span>
-        <h3 class="card__title">Название проекта</h3>
-        <p class="card__essence">Короткое описание сути проекта</p>
+        <h3 class="card__title">YogaTravelLife</h3>
+        <p class="card__essence">Сайт йога-путешествий и онлайн-студии</p>
       </div>
       <div class="card" data-project-id="4" data-category="web">
         <span class="card__type">Сайт</span>
-        <h3 class="card__title">Название проекта</h3>
-        <p class="card__essence">Короткое описание сути проекта</p>
+        <h3 class="card__title">Эпишик</h3>
+        <p class="card__essence">Лендинг студии лазерной эпиляции</p>
       </div>
       <div class="card" data-project-id="5" data-category="web">
         <span class="card__type">Сайт</span>
-        <h3 class="card__title">Название проекта</h3>
-        <p class="card__essence">Короткое описание сути проекта</p>
+        <h3 class="card__title">InCube</h3>
+        <p class="card__essence">Сайт инди-студии веб-разработки</p>
+      </div>
+      <div class="card" data-project-id="13" data-category="web">
+        <span class="card__type">Сайт</span>
+        <h3 class="card__title">Miloslava Family</h3>
+        <p class="card__essence">Интернет-магазин эко-вещей</p>
+      </div>
+      <div class="card" data-project-id="14" data-category="web">
+        <span class="card__type">Сайт</span>
+        <h3 class="card__title">NewAgeSchool</h3>
+        <p class="card__essence">Сайт дистанционной школы с билингвальным обучением</p>
+      </div>
+      <div class="card" data-project-id="15" data-category="web">
+        <span class="card__type">Сайт</span>
+        <h3 class="card__title">Ульяна Коретковская</h3>
+        <p class="card__essence">Сайт студии эстетики лица и тела</p>
       </div>
       <div class="card" data-project-id="6" data-category="logos">
         <span class="card__type">Логотип</span>
@@ -86,17 +106,37 @@
         <h3 class="card__title">MaYoga</h3>
         <p class="card__essence">Айдентика для йога-студии</p>
       </div>
-      <div class="card" data-project-id="11" data-category="posters">
-        <span class="card__type">Афиши</span>
-        <h3 class="card__title">Тишина</h3>
-        <p class="card__essence">Серия плакатов для фестиваля</p>
+      <div class="card card--poster" data-project-id="17" data-category="posters">
+        <span class="card__type">Афиша</span>
+        <h3 class="card__title">Чебатков</h3>
+        <p class="card__essence">Афиша стендап-концерта</p>
+        <img class="card__poster-img" src="img/Чебатков.png" alt="Чебатков">
       </div>
-      <div class="card" data-project-id="12" data-category="posters">
-        <span class="card__type">Афиши</span>
-        <h3 class="card__title">Ритм</h3>
-        <p class="card__essence">Визуальная айдентика концерта</p>
+      <div class="card card--poster" data-project-id="11" data-category="posters">
+        <span class="card__type">Афиша</span>
+        <h3 class="card__title">Горячая ночь</h3>
+        <p class="card__essence">Афиша вечеринки</p>
+        <img class="card__poster-img" src="img/Горячая_ночь.png" alt="Горячая ночь">
       </div>
-    </div>
+      <div class="card card--poster" data-project-id="12" data-category="posters">
+        <span class="card__type">Баннер</span>
+        <h3 class="card__title">Коротко</h3>
+        <p class="card__essence">Промо-баннер</p>
+        <img class="card__poster-img" src="img/Коротко.png" alt="Коротко">
+      </div>
+      <div class="card card--poster" data-project-id="16" data-category="posters">
+        <span class="card__type">Афиша</span>
+        <h3 class="card__title">Прогулки в лесу</h3>
+        <p class="card__essence">Афиша мероприятия</p>
+        <img class="card__poster-img" src="img/Прогулки_в_лесу.png" alt="Прогулки в лесу">
+      </div>
+      <div class="card card--poster" data-project-id="20" data-category="posters">
+        <span class="card__type">Афиша</span>
+        <h3 class="card__title">Сплав по реке Тверца</h3>
+        <p class="card__essence">Афиша сплава</p>
+        <img class="card__poster-img" src="img/Сплав_по_реке_Тверца.png" alt="Сплав по реке Тверца">
+      </div>
+      </div>
   </section>
 
   <!-- 🪟 Pop-up -->
@@ -111,8 +151,13 @@
       <span class="popup__type"></span>
       <p class="popup__description"></p>
       <span class="popup__details"></span>
-      <a class="popup__link" href="" target="_blank">Посмотреть проект →</a>
+      <div class="popup__links"></div>
     </div>
+  </div>
+
+  <!-- 🔲 Лайтбокс -->
+  <div class="lightbox" id="lightbox">
+    <img class="lightbox__img" src="" alt="">
   </div>
 
   <footer class="footer">
