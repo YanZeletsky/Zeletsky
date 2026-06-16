@@ -394,27 +394,16 @@ body.theme-green .theme-toggle__label { color: #A5D6A7; }
 
 .card--poster .card__poster-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
-  position: absolute;
-  inset: 0;
+  border-radius: inherit;
 }
 
-/* в обычной сетке — компактная высота */
-.card--poster {
-  min-height: 200px;
-}
-
-/* пропорции только в режиме афиш */
-.portfolio__grid--posters .card--poster,
-.portfolio__grid--posters .card--poster-placeholder {
-  aspect-ratio: 3 / 5;
-}
-
-/* галерея афиш — 4 в ряд */
+/* masonry-сетка для афиш */
 .portfolio__grid--posters {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 8px;
+  gap: 1.5rem;
+  align-items: start;
 }
 
 @media (max-width: 1023px) {
@@ -426,32 +415,9 @@ body.theme-green .theme-toggle__label { color: #A5D6A7; }
 @media (max-width: 480px) {
   .portfolio__grid.portfolio__grid--posters {
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 6px;
     gap: 0.75rem;
   }
-}
-
-@media (max-width: 767px) {
-  .portfolio__grid.portfolio__grid--posters {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* заглушка-афиша */
-.card--poster-placeholder {
-  padding: 0;
-  min-height: 200px;
-  background: #252525;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.card--poster-placeholder .card__type,
-.card--poster-placeholder .card__title { display: none; }
-.card--poster-placeholder .card__essence {
-  display: block;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.2);
-  text-align: center;
 }
 
 /* 🔲 Лайтбокс — полноэкранный просмотр афиши */

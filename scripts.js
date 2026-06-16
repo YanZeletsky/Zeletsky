@@ -428,6 +428,37 @@
         grid.querySelectorAll('.card').forEach(c => c.classList.toggle('card--hidden', c.dataset.category !== cat));
         // режим сетки для афиш
         grid.classList.toggle('portfolio__grid--posters', cat === 'posters');
+        if (cat === 'posters') layoutPosters();
+        else resetPosterSpans();
+      });
+
+      // masonry — рассчитываем span каждой афиши по пропорциям картинки
+      function layoutPosters() {
+        const gap = parseFloat(getComputedStyle(grid).rowGap) || 0;
+        const rowH = parseFloat(getComputedStyle(grid).gridAutoRows) || 8;
+        grid.querySelectorAll('.card--poster').forEach(card => {
+          const img = card.querySelector('.card__poster-img');
+          if (!img) return;
+          const setSpan = () => {
+            const colW = card.offsetWidth;
+            if (!colW || !img.naturalWidth) return;
+            const imgH = colW * (img.naturalHeight / img.naturalWidth);
+            const span = Math.round((imgH + gap) / (rowH + gap));
+            card.style.gridRowEnd = 'span ' + span;
+          };
+          if (img.complete) setSpan();
+          else img.addEventListener('load', setSpan);
+        });
+      }
+
+      function resetPosterSpans() {
+        grid.querySelectorAll('.card--poster').forEach(card => {
+          card.style.gridRowEnd = '';
+        });
+      }
+
+      window.addEventListener('resize', () => {
+        if (grid.classList.contains('portfolio__grid--posters')) layoutPosters();
       });
 
       // клик по карточке → попап или лайтбокс
