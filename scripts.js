@@ -270,7 +270,8 @@
     type: 'UX/UI',
     description: 'Интерактивный HTML-прототип ERP-системы для фермы микрозелени. Проект охватывает полный цикл: от посева и контроля партий до закупок сырья, отгрузки клиентам и передачи смены.\n\n5 ролей с разным уровнем доступа — от дашборда управляющего до чеклиста сотрудника смены. Адаптивная вёрстка: таблицы трансформируются в карточки на мобилке, метрики перестраиваются в 2×2 грид, фильтры — горизонтальный слайдер.\n\n11 экранов, переключение ролей, интерактивные чеклисты, графики на Chart.js, модальные формы.',
     details: 'UX/UI-дизайн · дизайн-система · HTML/CSS/JS · Chart.js · Figma',
-    image: '',
+    image: 'img/micr.svg',
+    popupBg: '#FFFFFF',
     links: [
       { label: 'Открыть прототип →', url: 'https://yanzeletsky.github.io/MicroPlant/' },
       { label: 'Макеты в Figma →', url: 'https://www.figma.com/design/TsGesv1eTUmB83RZGk29Br/' }
@@ -281,7 +282,8 @@
     type: 'UX/UI',
     description: 'Концепт iOS-приложения для людей, практикующих осознанные сновидения. Запись снов текстом или голосом, отслеживание осознанности, аналитика паттернов и AI-визуализация сновидений.\n\nТёмная тема, glassmorphism, дизайн-система с токенами (фиолетовый #8B5CF6, бирюза, янтарь). Цветовая кодировка карточек по типу сна, аккордеон для параметров, iOS-паттерны (Dynamic Island, Safe Area).\n\n8 экранов с полным пользовательским путём: от загрузки до AI-генерации сцен. Интерактивный прототип с кликабельной навигацией.',
     details: 'UX/UI-дизайн · дизайн-система · прототипирование · HTML/CSS/JS · iOS HIG',
-    image: '',
+    image: 'img/снов.svg',
+    popupBg: '#000000',
     links: [
       { label: 'Открыть прототип →', url: 'https://yanzeletsky.github.io/Dreamer/' },
       { label: 'Макеты в Figma →', url: 'https://www.figma.com/design/fu4q5MCENUOrGwZUoZZAPe/' }
@@ -293,6 +295,7 @@
     description: 'Сайт для двух взаимодополняющих проектов преподавателя йоги Марины Полчковой: онлайн-студия «MaYoga» и йога-путешествия «Yoga-travel-life».\n\nMaYoga — онлайн-студия, где практика встраивается в ритм жизни: библиотека уроков, живые занятия, обратная связь и поддерживающее комьюнити. Yoga-travel-life — йога-путешествия, где практика выходит за стены и смешивается с духом приключений.\n\nДва проекта — две стороны одной медали: регулярная работа над собой и трансформирующий опыт выхода из зоны комфорта.',
     details: 'Веб-дизайн · вёрстка · адаптив',
     image: '',
+    gallery: ['img/YogaTravelLife.svg'],
     links: [
       { label: 'Открыть сайт →', url: 'https://yoga-travel-life.ru/' }
     ]
@@ -303,6 +306,7 @@
     description: 'Лендинг для студии лазерной эстетики EPISHIK в Зеленограде. Студия для мужчин и женщин — профессиональные мастера, современное оборудование (Diode Laser), индивидуальный подбор параметров после диагностики кожи.\n\nАкцент на преимуществах лазерной эпиляции: долговременный эффект, экономия времени, комфорт и безопасность процедуры благодаря охлаждению и анестетикам.',
     details: 'Веб-дизайн · Figma · прототипирование',
     image: '',
+    gallery: ['img/Эпишик1.svg'],
     links: [
       { label: 'Прототип в Figma →', url: 'https://www.figma.com/proto/eBAF92HhgSqzkDngjKaXrT/' },
       { label: 'Дизайн в Figma →', url: 'https://www.figma.com/design/eBAF92HhgSqzkDngjKaXrT/' }
@@ -332,6 +336,7 @@
     description: 'Интернет-магазин эко-вещей для семьи. Описание уточняется.',
     details: 'Веб-дизайн · вёрстка',
     image: '',
+    gallery: ['img/Miloslavafamily.svg'],
     links: [
       { label: 'Открыть сайт →', url: 'https://www.miloslavafamily.ru/' }
     ]
@@ -391,12 +396,32 @@
 
       const imgEl = popup.querySelector('.popup__image');
       const imgWrapper = popup.querySelector('.popup__logo-wrapper');
-      if (p.image) {
+      const galleryEl = popup.querySelector('.popup__gallery');
+
+      // галерея фото
+      galleryEl.innerHTML = '';
+      galleryEl.classList.remove('popup__gallery--active');
+      galleryEl.classList.remove('popup__gallery--single');
+
+      if (p.gallery && p.gallery.length) {
+        p.gallery.forEach(src => {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = p.title;
+          galleryEl.appendChild(img);
+        });
+        galleryEl.classList.add('popup__gallery--active');
+        if (p.gallery.length === 1) galleryEl.classList.add('popup__gallery--single');
+        imgWrapper.style.display = 'none';
+      } else if (p.image) {
         imgEl.src = p.image;
         imgEl.alt = p.title;
-        imgWrapper.style.display = '';
+        imgWrapper.style.display = 'flex';
+        imgWrapper.style.background = p.popupBg || '';
+        imgWrapper.classList.toggle('popup__logo-wrapper--clean', !!p.popupBg);
       } else {
         imgWrapper.style.display = 'none';
+        imgWrapper.classList.remove('popup__logo-wrapper--clean');
       }
       popup.classList.add('popup--open');
       document.body.style.overflow = 'hidden';
@@ -408,7 +433,8 @@
     }
 
     popupOverlay.addEventListener('click', closePopup);
-    popupClose.addEventListener('click', closePopup);
+    popupClose.addEventListener('click', (e) => { e.stopPropagation(); closePopup(); });
+    popup.querySelector('.popup__content').addEventListener('click', (e) => e.stopPropagation());
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup(); });
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -485,6 +511,12 @@
         const posterImg = card.querySelector('.card__poster-img');
         if (posterImg) {
           openLightbox(posterImg.src, posterImg.alt);
+          return;
+        }
+        // логотипы — лайтбокс
+        const logoImg = card.querySelector('.card__logo-img');
+        if (logoImg) {
+          openLightbox(logoImg.src, logoImg.alt);
           return;
         }
         // заглушки — ничего
