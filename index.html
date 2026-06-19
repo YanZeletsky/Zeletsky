@@ -13,16 +13,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <button class="theme-toggle" data-theme-toggle aria-label="Creative Mode">
-    <span class="theme-toggle__pulse"></span>
-    <span class="theme-toggle__label">Creative Mode</span>
-    <span class="theme-toggle__track"><span class="theme-toggle__knob"></span></span>
-  </button>
 
-  <!-- 🌊 волна -->
-  <div class="creative-wave"></div>
 
-  <canvas class="dust-canvas"></canvas>
+  <!-- 💫 луч света -->
   <div class="light-beam"></div>
 
   <section class="hero">
@@ -32,51 +25,121 @@
 <p class="hero__tags">UX/UI • Веб • Графический дизайн</p>
   </section>
 
+  <!-- 👤 Обо мне -->
+  <section class="about" id="about">
+    <div class="about__intro">
+      <div class="about__photo-wrap">
+        <img class="about__photo" src="img/photo.jpg" alt="Ян Зелецкий">
+      </div>
+      <div class="about__bio">
+        <h2 class="about__name">Обо мне</h2>
+        <p class="about__text">Проектирую интерфейсы для веба и мобилок. Сначала разбираюсь в логике и сценариях, потом сажусь за макеты. Если нужно пощупать руками — собираю живой прототип и выкладываю на хостинг.</p>
+      </div>
+    </div>
+
+    <div class="about__tags-section">
+      <span class="about__label">Навыки</span>
+      <div class="about__chips">
+        <span class="about__chip">User flows</span>
+        <span class="about__chip">Структура экранов</span>
+        <span class="about__chip">UI-Kit</span>
+        <span class="about__chip">Прототипы кодом</span>
+        <span class="about__chip">Микротексты и CTA</span>
+        <span class="about__chip">Юзабилити-тесты</span>
+        <span class="about__chip">Адаптив</span>
+      </div>
+    </div>
+
+    <div class="about__tags-section">
+      <span class="about__label">Стек</span>
+      <div class="about__chips">
+        <span class="about__chip">Figma</span>
+        <span class="about__chip">Photoshop</span>
+        <span class="about__chip">Illustrator</span>
+        <span class="about__chip">Claude Code</span>
+        <span class="about__chip">HTML / CSS / JS</span>
+        <span class="about__chip">GitHub</span>
+        <span class="about__chip">Netlify</span>
+        <span class="about__chip">Tilda</span>
+        <span class="about__chip">DeepSeek</span>
+        <span class="about__chip">Recraft</span>
+        <span class="about__chip">Шедеврум</span>
+      </div>
+    </div>
+
+    <p class="about__footnote">Сначала думаю, потом рисую. К правкам отношусь спокойно. С разработчиками на одной волне.</p>
+  </section>
+
   <div class="portfolio__filters">
-    <button class="portfolio__filter portfolio__filter--active" data-filter="uxui">UX/UI</button>
+    <button class="portfolio__filter portfolio__filter--active" data-filter="all">Все</button>
+    <button class="portfolio__filter" data-filter="uxui">UX/UI</button>
     <button class="portfolio__filter" data-filter="web">Сайты</button>
     <button class="portfolio__filter" data-filter="logos">Логотипы</button>
     <button class="portfolio__filter" data-filter="posters">Афиши</button>
   </div>
 
-  <section class="portfolio">
+  <section class="portfolio" id="portfolio">
     <div class="portfolio__grid">
-      <div class="card" data-project-id="1" data-category="uxui">
+      <div class="card card--preview" data-project-id="1" data-category="uxui">
+        <div class="card__preview-img-wrapper">
+          <img class="card__preview-img" src="img/preview-microplant.png" alt="MicroPlant">
+        </div>
         <span class="card__type">UX/UI</span>
         <h3 class="card__title">MicroPlant</h3>
         <p class="card__essence">ERP-система для фермы микрозелени</p>
       </div>
-      <div class="card" data-project-id="2" data-category="uxui">
+      <div class="card card--preview" data-project-id="2" data-category="uxui">
+        <div class="card__preview-img-wrapper">
+          <img class="card__preview-img" src="img/preview-snovidets.png" alt="Сновидец">
+        </div>
         <span class="card__type">UX/UI</span>
         <h3 class="card__title">Сновидец</h3>
         <p class="card__essence">Концепт приложения для осознанных сновидений</p>
       </div>
-      <div class="card" data-project-id="3" data-category="web">
+      <div class="card card--preview" data-project-id="3" data-category="web">
+        <div class="card__preview-img-wrapper">
+          <img class="card__preview-img" src="img/preview-yogatravellife.png" alt="YogaTravelLife">
+        </div>
         <span class="card__type">Сайт</span>
         <h3 class="card__title">YogaTravelLife</h3>
         <p class="card__essence">Сайт йога-путешествий и онлайн-студии</p>
       </div>
-      <div class="card" data-project-id="4" data-category="web">
+      <div class="card card--preview" data-project-id="4" data-category="web">
+        <div class="card__preview-img-wrapper">
+          <img class="card__preview-img" src="img/preview-epishik.png" alt="Эпишик">
+        </div>
         <span class="card__type">Сайт</span>
         <h3 class="card__title">Эпишик</h3>
         <p class="card__essence">Лендинг студии лазерной эпиляции</p>
       </div>
-      <div class="card" data-project-id="5" data-category="web">
+      <div class="card card--preview" data-project-id="5" data-category="web">
+        <div class="card__preview-img-wrapper">
+          <img class="card__preview-img" src="img/preview-incube.png" alt="InCube">
+        </div>
         <span class="card__type">Сайт</span>
         <h3 class="card__title">InCube</h3>
         <p class="card__essence">Сайт инди-студии веб-разработки</p>
       </div>
-      <div class="card" data-project-id="13" data-category="web">
+      <div class="card card--preview" data-project-id="13" data-category="web">
+        <div class="card__preview-img-wrapper">
+          <img class="card__preview-img" src="img/preview-miloslava.png" alt="Miloslava Family">
+        </div>
         <span class="card__type">Сайт</span>
         <h3 class="card__title">Miloslava Family</h3>
         <p class="card__essence">Интернет-магазин эко-вещей</p>
       </div>
-      <div class="card" data-project-id="14" data-category="web">
+      <div class="card card--preview" data-project-id="14" data-category="web">
+        <div class="card__preview-img-wrapper">
+          <img class="card__preview-img" src="img/preview-newage.png" alt="NewAgeSchool">
+        </div>
         <span class="card__type">Сайт</span>
         <h3 class="card__title">NewAgeSchool</h3>
         <p class="card__essence">Сайт дистанционной школы с билингвальным обучением</p>
       </div>
-      <div class="card" data-project-id="15" data-category="web">
+      <div class="card card--preview" data-project-id="15" data-category="web">
+        <div class="card__preview-img-wrapper">
+          <img class="card__preview-img" src="img/preview-koretkovskaya.png" alt="Ульяна Коретковская">
+        </div>
         <span class="card__type">Сайт</span>
         <h3 class="card__title">Ульяна Коретковская</h3>
         <p class="card__essence">Сайт студии эстетики лица и тела</p>
@@ -149,7 +212,7 @@
       </div>
   </section>
 
-  <!-- 🪟 Pop-up -->
+  <!-- 🪟 Pop-up / Кейс-стади -->
   <div class="popup" id="popup">
     <div class="popup__overlay"></div>
     <div class="popup__content">
@@ -157,11 +220,12 @@
       <div class="popup__logo-wrapper">
         <img class="popup__image" src="" alt="">
       </div>
-      <div class="popup__gallery"></div>
+      <div class="popup__bento"></div>
+      <div class="popup__scroll-dots"></div>
       <h2 class="popup__title"></h2>
       <span class="popup__type"></span>
+      <div class="popup__tools"></div>
       <p class="popup__description"></p>
-      <span class="popup__details"></span>
       <div class="popup__links"></div>
     </div>
   </div>
@@ -171,10 +235,29 @@
     <img class="lightbox__img" src="" alt="">
   </div>
 
-  <footer class="footer">
-    <a class="footer__link" href="https://vk.com/zeletsky" target="_blank" aria-label="VK"><svg viewBox="0 0 24 24"><path d="M12.77 19.15h1.27s.38-.04.58-.25c.18-.2.17-.55.17-.55s-.03-1.71.77-1.96c.78-.25 1.78 1.65 2.84 2.38.8.55 1.41.43 1.41.43l2.84-.04s1.48-.09.78-1.26c-.06-.1-.41-.86-2.09-2.43-1.76-1.64-1.52-1.38.6-4.22 1.29-1.73 1.8-2.79 1.64-3.24-.15-.43-1.12-.32-1.12-.32l-3.2.02s-.24-.03-.41.07c-.17.1-.28.34-.28.34s-.5 1.33-1.17 2.46c-1.41 2.4-1.97 2.53-2.2 2.38-.54-.35-.4-1.4-.4-2.14 0-2.33.35-3.3-.69-3.55-.35-.08-.6-.14-1.48-.15-.13 0-1.01 0-1.55.02-.54.02-.96.17-1.2.31-.16.1-.29.3-.21.31.1.01.61.11.83.42.29.4.28 1.3.28 1.3s.16 2.74-.38 3.08c-.37.23-.89-.24-1.99-2.41-.56-1.11-1.04-2.34-1.04-2.34s-.09-.21-.24-.33c-.19-.14-.45-.19-.45-.19l-3.04.02s-.46.01-.62.21c-.15.18-.01.55-.01.55s2.35 5.5 5.01 8.27c2.44 2.54 5.21 2.37 5.21 2.37Z"/></svg></a>
-    <a class="footer__link" href="https://t.me/zeletsky" target="_blank" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.04 15.6 8.62 20.2c.55 0 .79-.24 1.08-.52l2.6-2.48 5.38 3.94c.99.55 1.69.26 1.96-.91L22.92 4.2c.32-1.49-.54-2.07-1.52-1.7L2.63 10.3c-1.44.57-1.42 1.39-.24 1.77l4.86 1.52 11.3-7.1c.53-.35 1.01-.16.62.22Z"/></svg></a>
-  </footer>
+  <!-- 📬 Связаться -->
+  <section class="cta" id="contact">
+    <h2 class="cta__heading">Обсудим проект?</h2>
+    <p class="cta__sub">Открыт для предложений — напишите, и обсудим задачу</p>
+    <div class="cta__buttons">
+      <a class="cta__btn" href="https://t.me/zeletsky" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M9.04 15.6 8.62 20.2c.55 0 .79-.24 1.08-.52l2.6-2.48 5.38 3.94c.99.55 1.69.26 1.96-.91L22.92 4.2c.32-1.49-.54-2.07-1.52-1.7L2.63 10.3c-1.44.57-1.42 1.39-.24 1.77l4.86 1.52 11.3-7.1c.53-.35 1.01-.16.62.22Z"/></svg>
+        Telegram
+      </a>
+      <a class="cta__btn" href="mailto:yan.zeletsky@yandex.ru">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+        Email
+      </a>
+      <a class="cta__btn" href="https://max.ru/u/f9LHodD0cOI0S0DPyqoMvi6olTMcbbEuO0hLfxbAVoNyLspFmpAQz7UTwjk" target="_blank">
+        <svg viewBox="0 0 720 720"><path d="M350.4,9.6C141.8,20.5,4.1,184.1,12.8,390.4c3.8,90.3,40.1,168,48.7,253.7,2.2,22.2-4.2,49.6,21.4,59.3,31.5,11.9,79.8-8.1,106.2-26.4,9-6.1,17.6-13.2,24.2-22,27.3,18.1,53.2,35.6,85.7,43.4,143.1,34.3,299.9-44.2,369.6-170.3C799.6,291.2,622.5-4.6,350.4,9.6h0ZM269.4,504c-11.3,8.8-22.2,20.8-34.7,27.7-18.1,9.7-23.7-.4-30.5-16.4-21.4-50.9-24-137.6-11.5-190.9,16.8-72.5,72.9-136.3,150-143.1,78-6.9,150.4,32.7,183.1,104.2,72.4,159.1-112.9,316.2-256.4,218.6h0Z"/></svg>
+        Max
+      </a>
+      <a class="cta__btn" href="https://vk.com/zeletsky" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12.77 19.15h1.27s.38-.04.58-.25c.18-.2.17-.55.17-.55s-.03-1.71.77-1.96c.78-.25 1.78 1.65 2.84 2.38.8.55 1.41.43 1.41.43l2.84-.04s1.48-.09.78-1.26c-.06-.1-.41-.86-2.09-2.43-1.76-1.64-1.52-1.38.6-4.22 1.29-1.73 1.8-2.79 1.64-3.24-.15-.43-1.12-.32-1.12-.32l-3.2.02s-.24-.03-.41.07c-.17.1-.28.34-.28.34s-.5 1.33-1.17 2.46c-1.41 2.4-1.97 2.53-2.2 2.38-.54-.35-.4-1.4-.4-2.14 0-2.33.35-3.3-.69-3.55-.35-.08-.6-.14-1.48-.15-.13 0-1.01 0-1.55.02-.54.02-.96.17-1.2.31-.16.1-.29.3-.21.31.1.01.61.11.83.42.29.4.28 1.3.28 1.3s.16 2.74-.38 3.08c-.37.23-.89-.24-1.99-2.41-.56-1.11-1.04-2.34-1.04-2.34s-.09-.21-.24-.33c-.19-.14-.45-.19-.45-.19l-3.04.02s-.46.01-.62.21c-.15.18-.01.55-.01.55s2.35 5.5 5.01 8.27c2.44 2.54 5.21 2.37 5.21 2.37Z"/></svg>
+        VK
+      </a>
+    </div>
+  </section>
 
 
   <script src="scripts.js"></script>
