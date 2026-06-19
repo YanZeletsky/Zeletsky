@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900">
+  <!-- 🌳 Иггдрасиль — Древо Мира -->
+  
+  <!-- корни, уходящие в землю -->
+  <g opacity="0.3">
+    <path d="M300 780 Q250 800 180 810 Q140 815 100 830" stroke="#7CB77C" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M320 790 Q280 820 220 840 Q180 855 140 870" stroke="#7CB77C" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M500 780 Q550 800 620 810 Q660 815 710 825" stroke="#7CB77C" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M480 790 Q530 815 590 835 Q630 850 680 865" stroke="#7CB77C" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M350 800 Q330 830 310 870 Q300 890 290 900" stroke="#7CB77C" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M450 800 Q470 835 490 870 Q500 890 510 900" stroke="#7CB77C" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ствол — мощный, с текстурой -->
+  <g opacity="0.35">
+    <!-- основной ствол -->
+    <path d="M360 780 Q355 700 350 600 Q345 500 360 420 Q370 360 380 300 Q385 260 395 220" 
+          stroke="#7CB77C" stroke-width="28" fill="none" stroke-linecap="round"/>
+    <path d="M440 780 Q445 700 450 600 Q455 500 440 420 Q430 360 420 300 Q415 260 405 220" 
+          stroke="#7CB77C" stroke-width="28" fill="none" stroke-linecap="round"/>
+    <!-- заполнение ствола -->
+    <path d="M365 780 Q370 600 385 420 Q395 300 400 220 Q405 300 415 420 Q430 600 435 780Z" 
+          fill="#7CB77C" opacity="0.5"/>
+    
+    <!-- текстура ствола -->
+    <path d="M385 750 Q390 650 393 550" stroke="#5A9A5A" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M410 750 Q408 650 405 550" stroke="#5A9A5A" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M397 700 Q398 600 399 500" stroke="#5A9A5A" stroke-width="1.5" fill="none" opacity="0.3"/>
+  </g>
+
+  <!-- основные ветви -->
+  <g opacity="0.3" stroke="#7CB77C" fill="none" stroke-linecap="round">
+    <!-- левые ветви -->
+    <path d="M380 320 Q330 280 260 250 Q210 230 160 220" stroke-width="12"/>
+    <path d="M370 380 Q310 350 240 330 Q180 315 120 310" stroke-width="10"/>
+    <path d="M365 440 Q300 420 230 410 Q170 405 110 400" stroke-width="8"/>
+    <path d="M375 280 Q340 240 290 190 Q260 160 220 130" stroke-width="10"/>
+    <path d="M385 240 Q360 190 320 140 Q290 100 260 70" stroke-width="8"/>
+    
+    <!-- правые ветви -->
+    <path d="M420 320 Q470 280 540 250 Q590 230 640 220" stroke-width="12"/>
+    <path d="M430 380 Q490 350 560 330 Q620 315 680 310" stroke-width="10"/>
+    <path d="M435 440 Q500 420 570 410 Q630 405 690 400" stroke-width="8"/>
+    <path d="M425 280 Q460 240 510 190 Q540 160 580 130" stroke-width="10"/>
+    <path d="M415 240 Q440 190 480 140 Q510 100 540 70" stroke-width="8"/>
+    
+    <!-- верхние ветви -->
+    <path d="M395 220 Q390 160 370 100 Q355 60 340 20" stroke-width="9"/>
+    <path d="M405 220 Q410 160 430 100 Q445 60 460 20" stroke-width="9"/>
+    <path d="M400 200 Q400 140 400 80 Q400 40 400 5" stroke-width="7"/>
+  </g>
+
+  <!-- крона — облака листвы -->
+  <g opacity="0.15">
+    <!-- верхний ярус -->
+    <ellipse cx="400" cy="60" rx="120" ry="55" fill="#A5D6A7"/>
+    <ellipse cx="340" cy="40" rx="90" ry="45" fill="#7CB77C"/>
+    <ellipse cx="460" cy="40" rx="90" ry="45" fill="#7CB77C"/>
+    <ellipse cx="400" cy="15" rx="80" ry="35" fill="#66BB6A"/>
+    
+    <!-- средний ярус -->
+    <ellipse cx="280" cy="120" rx="110" ry="60" fill="#A5D6A7"/>
+    <ellipse cx="520" cy="120" rx="110" ry="60" fill="#A5D6A7"/>
+    <ellipse cx="200" cy="160" rx="100" ry="55" fill="#7CB77C"/>
+    <ellipse cx="600" cy="160" rx="100" ry="55" fill="#7CB77C"/>
+    <ellipse cx="400" cy="100" rx="130" ry="65" fill="#66BB6A"/>
+    
+    <!-- нижний ярус -->
+    <ellipse cx="160" cy="240" rx="110" ry="60" fill="#A5D6A7"/>
+    <ellipse cx="640" cy="240" rx="110" ry="60" fill="#A5D6A7"/>
+    <ellipse cx="250" cy="200" rx="100" ry="55" fill="#7CB77C"/>
+    <ellipse cx="550" cy="200" rx="100" ry="55" fill="#7CB77C"/>
+    <ellipse cx="120" cy="320" rx="90" ry="50" fill="#7CB77C"/>
+    <ellipse cx="680" cy="320" rx="90" ry="50" fill="#7CB77C"/>
+    <ellipse cx="160" cy="380" rx="80" ry="45" fill="#A5D6A7"/>
+    <ellipse cx="640" cy="380" rx="80" ry="45" fill="#A5D6A7"/>
+    
+    <!-- дополнительный объём -->
+    <ellipse cx="330" cy="170" rx="90" ry="50" fill="#66BB6A"/>
+    <ellipse cx="470" cy="170" rx="90" ry="50" fill="#66BB6A"/>
+    <ellipse cx="200" cy="290" rx="85" ry="48" fill="#66BB6A"/>
+    <ellipse cx="600" cy="290" rx="85" ry="48" fill="#66BB6A"/>
+  </g>
+
+  <!-- мелкие листья-детали на ветвях -->
+  <g opacity="0.2" fill="#A5D6A7">
+    <circle cx="160" cy="215" r="4"/>
+    <circle cx="220" cy="130" r="3"/>
+    <circle cx="260" cy="70" r="3.5"/>
+    <circle cx="540" cy="70" r="3.5"/>
+    <circle cx="580" cy="130" r="3"/>
+    <circle cx="640" cy="215" r="4"/>
+    <circle cx="120" cy="305" r="3"/>
+    <circle cx="680" cy="305" r="3"/>
+    <circle cx="340" cy="20" r="3"/>
+    <circle cx="460" cy="20" r="3"/>
+    <circle cx="400" cy="5" r="2.5"/>
+  </g>
+
+  <!-- 👤 человек у дерева — Ян -->
+  <g opacity="0.4" transform="translate(440, 680)">
+    <!-- тело — сидит, спина к дереву -->
+    <!-- ноги согнуты -->
+    <path d="M0 65 Q15 55 25 80 L30 100 L-5 100 Z" fill="#7CB77C"/>
+    <path d="M25 65 Q35 55 50 75 L55 100 L25 100 Z" fill="#7CB77C"/>
+    
+    <!-- торс -->
+    <path d="M5 20 Q0 40 -2 65 Q10 70 35 70 Q55 65 50 20 Z" fill="#7CB77C"/>
+    
+    <!-- руки к ноутбуку -->
+    <path d="M5 35 Q-10 45 -5 55 Q0 58 10 50" stroke="#7CB77C" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M48 35 Q60 45 58 55 Q55 58 45 50" stroke="#7CB77C" stroke-width="4" fill="none" stroke-linecap="round"/>
+    
+    <!-- голова -->
+    <circle cx="27" cy="8" r="14" fill="#7CB77C"/>
+    
+    <!-- волосы в пучке -->
+    <circle cx="27" cy="-6" r="7" fill="#5A9A5A"/>
+    <path d="M20 -4 Q27 -15 34 -4" fill="#5A9A5A"/>
+    
+    <!-- очки -->
+    <g stroke="#1A2E22" stroke-width="1.8" fill="none">
+      <circle cx="21" cy="7" r="4.5"/>
+      <circle cx="33" cy="7" r="4.5"/>
+      <path d="M25.5 7 L28.5 7"/>
+      <path d="M16.5 6 L14 4" stroke-linecap="round"/>
+      <path d="M37.5 6 L40 4" stroke-linecap="round"/>
+    </g>
+    
+    <!-- ноутбук -->
+    <g>
+      <!-- экран -->
+      <rect x="-2" y="45" width="30" height="20" rx="2" fill="#1A2E22" transform="rotate(-15, 13, 55)" opacity="0.8"/>
+      <!-- свечение экрана -->
+      <rect x="1" y="48" width="24" height="14" rx="1" fill="#A5D6A7" transform="rotate(-15, 13, 55)" opacity="0.3"/>
+      <!-- клавиатура -->
+      <rect x="5" y="63" width="30" height="2" rx="1" fill="#1A2E22" opacity="0.6"/>
+    </g>
+  </g>
+
+  <!-- тонкая линия земли -->
+  <line x1="50" y1="800" x2="750" y2="800" stroke="#7CB77C" stroke-width="1" opacity="0.15"/>
+</svg>
