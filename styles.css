@@ -307,8 +307,10 @@ body {
 /* 🎴 карточка-афиша */
 .card--poster {
   padding: 0; min-height: auto;
-  background: #1B3B2A;
+  background: transparent;
   overflow: hidden; position: relative;
+  cursor: pointer;
+  border: none;
 }
 .card--poster .card__type,
 .card--poster .card__title,
@@ -329,8 +331,16 @@ body {
 }
 @media (max-width: 480px) {
   .portfolio__grid.portfolio__grid--posters {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1px; gap: 0.75rem;
+    display: block;
+    column-count: 2;
+    column-gap: 0.75rem;
+  }
+  .portfolio__grid--posters .card--poster {
+    grid-row-end: auto !important;
+    break-inside: avoid;
+    margin-bottom: 0.4rem;
+    display: inline-block;
+    width: 100%;
   }
 }
 
