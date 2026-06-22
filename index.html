@@ -9,11 +9,33 @@
   <meta property="og:description" content="UX/UI, веб-дизайн, графический дизайн. Проектирую интерфейсы, прототипирую кодом.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="https://yanzeletsky.github.io/Zeletsky/img/og-cover.png">
+  <meta property="og:url" content="https://yanzeletsky.github.io/Zeletsky/">
+  <link rel="canonical" href="https://yanzeletsky.github.io/Zeletsky/">
+  <meta name="theme-color" content="#1A2E22">
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ян Зелецкий",
+    "jobTitle": "Дизайнер",
+    "description": "UX/UI, веб-дизайн, графический дизайн. Проектирую интерфейсы, прототипирую кодом.",
+    "url": "https://yanzeletsky.github.io/Zeletsky/",
+    "sameAs": [
+      "https://t.me/zeletsky",
+      "https://vk.com/zeletsky"
+    ]
+  }
+  </script>
   <title>Ян Зелецкий — дизайнер</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+
+<main>
 
   <!-- 💫 луч света -->
   <div class="light-beam"></div>
@@ -75,15 +97,14 @@
     <p class="about__footnote">Сначала думаю, потом рисую. К правкам отношусь спокойно. С разработчиками на одной волне.</p>
   </section>
 
-  <div class="portfolio__filters">
-    <button class="portfolio__filter portfolio__filter--active" data-filter="all">Все</button>
-    <button class="portfolio__filter" data-filter="uxui">UX/UI</button>
-    <button class="portfolio__filter" data-filter="web">Сайты</button>
-    <button class="portfolio__filter" data-filter="logos">Логотипы</button>
-    <button class="portfolio__filter" data-filter="posters">Афиши</button>
-  </div>
-
   <section class="portfolio" id="portfolio">
+    <div class="portfolio__filters">
+      <button class="portfolio__filter portfolio__filter--active" data-filter="all">Все</button>
+      <button class="portfolio__filter" data-filter="uxui">UX/UI</button>
+      <button class="portfolio__filter" data-filter="web">Сайты</button>
+      <button class="portfolio__filter" data-filter="logos">Логотипы</button>
+      <button class="portfolio__filter" data-filter="posters">Афиши</button>
+    </div>
     <div class="portfolio__grid">
       <div class="card card--preview" data-project-id="1" data-category="uxui">
         <div class="card__preview-img-wrapper">
@@ -210,7 +231,7 @@
   <div class="popup" id="popup">
     <div class="popup__overlay"></div>
     <div class="popup__content">
-      <button class="popup__close">← Закрыть</button>
+      <button class="popup__close" aria-label="Закрыть">✕</button>
       <div class="popup__logo-wrapper">
         <img class="popup__image" src="" alt="">
       </div>
@@ -253,6 +274,7 @@
     </div>
   </section>
 
+</main>
 
   <script src="scripts.js"></script>
 </body>

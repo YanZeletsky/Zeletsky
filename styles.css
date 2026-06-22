@@ -405,11 +405,12 @@ body {
 .popup--open .popup__content { transform: translateY(0); }
 
 .popup__close {
-  position: relative; z-index: 3;
-  font-family: var(--font-main); font-size: 0.8rem; font-weight: 400;
+  position: absolute; top: 1rem; right: 1rem; z-index: 3;
+  font-family: var(--font-main); font-size: 1.2rem; font-weight: 300;
   color: var(--color-text-secondary);
   background: none; border: none;
-  cursor: pointer; align-self: flex-start; padding: 0;
+  cursor: pointer; padding: 0.2rem 0.5rem;
+  line-height: 1;
   transition: color 0.3s ease;
 }
 .popup__close:hover { color: var(--color-text); }
@@ -691,11 +692,6 @@ body {
   border-radius: 999px;
   padding: 0.25rem 0.65rem;
   white-space: nowrap; letter-spacing: 0.02em;
-  transition: border-color 0.3s ease, color 0.3s ease;
-}
-.about__chip:hover {
-  border-color: rgba(124,183,124,0.35);
-  color: var(--color-text);
 }
 .about__footnote {
   font-size: 0.8rem; font-weight: 400; font-style: italic;
@@ -831,4 +827,18 @@ body {
   .cta__sub { font-size: 13px; }
   .cta__buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; width: 100%; }
   .cta__btn { justify-content: center; font-size: 0.85rem; padding: 0.55rem 0.5rem; }
+}
+
+/* ══════════════════════════════════════
+   ♿ Уважение к настройке «уменьшить движение»
+   ══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .falling-leaf { display: none !important; }
+  .card:hover { transform: none; }
 }

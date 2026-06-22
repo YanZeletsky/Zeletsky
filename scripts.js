@@ -469,19 +469,22 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animate);
   }
 
-  // спавним листья постоянно
-  const isMobile = window.innerWidth <= 600;
-  function leafLoop() {
-    spawnLeaf();
-    const delay = isMobile
-      ? 3000 + Math.random() * 5000
-      : 1500 + Math.random() * 3000;
-    setTimeout(leafLoop, delay);
+  // спавним листья (только если пользователь не отключил анимации)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    const isMobile = window.innerWidth <= 600;
+    function leafLoop() {
+      spawnLeaf();
+      const delay = isMobile
+        ? 3000 + Math.random() * 5000
+        : 1500 + Math.random() * 3000;
+      setTimeout(leafLoop, delay);
+    }
+    // первая партия
+    const initialCount = isMobile ? 2 : 5;
+    for (let i = 0; i < initialCount; i++) setTimeout(() => spawnLeaf(), i * 600);
+    setTimeout(leafLoop, 3000);
   }
-  // первая партия
-  const initialCount = isMobile ? 2 : 5;
-  for (let i = 0; i < initialCount; i++) setTimeout(() => spawnLeaf(), i * 600);
-  setTimeout(leafLoop, 3000);
 
   /* 🧭 Навигация — убрана в итерации 2 */
 });
