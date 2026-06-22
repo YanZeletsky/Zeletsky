@@ -69,6 +69,11 @@ body {
 
 /* 🧭 Навигация — убрана в итерации 2 */
 
+/* 📸 Мобильный аватар над hero */
+.hero-avatar {
+  display: none;
+}
+
 /* 🌅 Hero
    ══════════════════════════════════════ */
 .hero {
@@ -680,17 +685,31 @@ body {
     gap: 0.7rem; padding: 0 1.5rem 1rem;
   }
   .about__intro { flex-direction: column; gap: 0.5rem; }
-  .about__photo-wrap { width: 80px; height: 80px; }
+  .hero-avatar {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 0.8rem;
+    position: relative;
+    z-index: 3;
+  }
+  .hero-avatar__img {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(124,183,124,0.25);
+  }
+  .about__photo-wrap { display: none; }
   .about__bio { align-items: center; }
   .about__name { font-size: 17px; }
-  .about__text { font-size: 13px; max-width: 300px; line-height: 1.5; }
+  .about__text { font-size: 14px; max-width: 300px; line-height: 1.5; }
   .about__tags-section {
     flex-direction: column; align-items: center; gap: 0.3rem;
   }
-  .about__label { font-size: 0.6rem; }
+  .about__label { font-size: 0.7rem; }
   .about__chips { justify-content: center; gap: 0.3rem; }
-  .about__chip { font-size: 0.65rem; padding: 0.15rem 0.45rem; }
-  .about__footnote { font-size: 0.7rem; }
+  .about__chip { font-size: 0.75rem; padding: 0.2rem 0.5rem; }
+  .about__footnote { font-size: 0.75rem; }
 }
 
 /* 📬 CTA + контакты */
@@ -737,12 +756,11 @@ body {
    ══════════════════════════════════════ */
 @media (max-width: 600px) {
   .hero { 
-    min-height: 45vh;
-    min-height: 45dvh;
+    min-height: auto;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 1.5rem 1.5rem;
+    padding: 0 1.5rem 2rem;
   }
   .hero__title { font-size: clamp(34px, 10vw, 46px); }
   .hero__subtitle { letter-spacing: .15em; margin-top: 0.2rem; }
