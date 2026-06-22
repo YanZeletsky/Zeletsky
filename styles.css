@@ -246,11 +246,11 @@ body {
 /* 🎨 карточка-логотип */
 .card--logo {
   display: flex; flex-direction: column;
-  padding: 0; overflow: hidden; gap: 0.4rem;
+  padding: 0; overflow: hidden; gap: 0;
 }
 .card--logo.card--hidden { display: none; }
 .card--logo .card__logo-img-wrapper {
-  position: relative; width: 100%; aspect-ratio: 4 / 3;
+  position: relative; width: 100%; aspect-ratio: 16 / 10;
   display: flex; align-items: center; justify-content: center;
   background: #1B3B2A;
   border-radius: 20px 20px 0 0;
@@ -275,15 +275,17 @@ body {
   object-fit: contain;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
 }
+.card--logo .card__type,
 .card--logo .card__title,
 .card--logo .card__essence { padding: 0 1rem; }
-.card--logo .card__title { padding-top: 0.8rem; }
-.card--logo .card__essence { padding-bottom: 1rem; }
+.card--logo .card__type { padding-top: 0.8rem; }
+.card--logo .card__title { margin-top: 0.3rem; }
+.card--logo .card__essence { margin-top: 0.1rem; padding-bottom: 0.95rem; }
 
 /* 🖼 карточка-превью */
 .card--preview {
   display: flex; flex-direction: column;
-  padding: 0; overflow: hidden;
+  padding: 0; overflow: hidden; gap: 0;
 }
 .card--preview.card--hidden { display: none; }
 .card--preview .card__preview-img-wrapper {
@@ -302,7 +304,8 @@ body {
 .card--preview .card__title,
 .card--preview .card__essence { padding: 0 1rem; }
 .card--preview .card__type { padding-top: 0.8rem; }
-.card--preview .card__essence { padding-bottom: 1rem; }
+.card--preview .card__title { margin-top: 0.3rem; }
+.card--preview .card__essence { margin-top: 0.1rem; padding-bottom: 0.95rem; }
 
 /* 🎴 карточка-афиша */
 .card--poster {
@@ -779,24 +782,23 @@ body {
 
   /* карточки — единый стиль */
   .card { border-radius: 12px; }
-  .card:not(.card--logo):not(.card--poster) {
+  .card:not(.card--logo):not(.card--poster):not(.card--preview) {
     padding: 1rem 0.9rem; min-height: 100px;
   }
-  .card:not(.card--logo):not(.card--poster) .card__type { font-size: 0.7rem; }
-  .card:not(.card--logo):not(.card--poster) .card__essence { font-size: 0.78rem; }
+  .card:not(.card--logo):not(.card--poster):not(.card--preview) .card__type { font-size: 0.7rem; }
+  .card:not(.card--logo):not(.card--poster):not(.card--preview) .card__essence { font-size: 0.78rem; }
 
-  /* preview: текст плотной группой */
-  .card--preview { gap: 0.15rem; }
+  /* preview: близость title+essence */
   .card--preview .card__preview-img-wrapper { border-radius: 12px 12px 0 0; }
-  .card--preview .card__type { padding-top: 0.35rem; }
-  .card--preview .card__title { font-size: 1rem; }
-  .card--preview .card__essence { padding-bottom: 0.65rem; }
+  .card--preview .card__type { padding-top: 0.4rem; }
+  .card--preview .card__title { margin-top: 0.2rem; font-size: 1rem; }
+  .card--preview .card__essence { margin-top: 0.12rem; padding-bottom: 0.8rem; }
 
-  /* logo: те же отступы и скругления */
-  .card--logo { gap: 0.15rem; }
+  /* logo: тот же ритм */
   .card--logo .card__logo-img-wrapper { border-radius: 12px 12px 0 0; }
-  .card--logo .card__title { padding-top: 0.5rem; font-size: 1rem; }
-  .card--logo .card__essence { padding-bottom: 0.65rem; }
+  .card--logo .card__type { padding-top: 0.4rem; }
+  .card--logo .card__title { margin-top: 0.2rem; font-size: 1rem; }
+  .card--logo .card__essence { margin-top: 0.12rem; padding-bottom: 0.8rem; }
 
   .portfolio__grid { gap: 0.6rem; }
   .portfolio__filters { 
