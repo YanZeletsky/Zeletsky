@@ -488,3 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 🧭 Навигация — убрана в итерации 2 */
 });
+
+/* 🔒 Защита от копирования */
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+document.addEventListener('dragstart', (e) => e.preventDefault());

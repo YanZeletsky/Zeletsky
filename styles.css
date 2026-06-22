@@ -40,6 +40,8 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* ══════════════════════════════════════
