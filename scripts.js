@@ -86,6 +86,11 @@ const projects = {
     description: '\nЗадача\nФермы микрозелени работают с коротким циклом, где сбой в один день означает потерю партии. Учёт часто ведётся в Excel, а ERP-системы не адаптированы под специфику. Цель — спроектировать решение, которое закроет полный цикл и будет удобно разным сотрудникам в их реальных условиях.\n\nUX-решения\n· 5 ролей — результат разделения задач: от стратегического дашборда управляющего до операционного чеклиста сотрудника смены.\n· Мобильный сценарий — ключевой: таблицы → карточки, метрики → сетка 2×2, фильтры → слайдер. Всё для управления одной рукой в условиях склада.\n· Чеклисты и передача смены — формализовал процесс, чтобы исключить потерю информации между сменами.\n\nРезультат\nИнтерактивный HTML-прототип: 11 экранов, переключение ролей, графики на Chart.js, модальные формы, дизайн-система в Figma.',
     details: 'Figma · HTML/CSS/JS · Chart.js',
     image: 'img/micr.svg',
+       gallery: [
+      'img/microplant-1.png',
+      'img/microplant-2.png',
+      'img/microplant-3.png'
+    ],
     popupBg: '#FFFFFF',
     links: [
       { label: 'Открыть прототип →', url: 'https://yanzeletsky.github.io/MicroPlant/' },
@@ -110,7 +115,11 @@ const projects = {
     description: '\nЗадача\nПреподаватель йоги Марина Полчкова ведёт два направления: онлайн-студию и йога-путешествия. Изначально это были два раздельных канала, аудитория не пересекалась. Цель — объединить их на одном сайте так, чтобы посетитель понимал разницу, но воспринимал оба проекта как части одной экосистемы.\n\nUX-решения\n· Единый лендинг с бинарной структурой — пользователь с первого экрана видит два пути: «регулярная практика» и «трансформирующий опыт». Это осознанный отказ от классической навигации в пользу смыслового выбора.\n· Бесшовный переход между проектами — визуальное разделение через цвет и типографику, но без ощущения «разных сайтов». Пользователь в любой момент может переключиться с одного направления на другое, не теряя контекст.\n· Адаптивный дизайн — отдельное внимание к мобильной версии: аудитория преимущественно женская, просмотры с телефона из инстаграма.\n\nРезультат\nСвёрстанный сайт, объединяющий два бренда в одну экосистему. Повысилась конверсия переходов между проектами: пользователи онлайн-студии стали записываться в путешествия.',
     details: 'Figma · HTML/CSS · адаптивная вёрстка',
     image: '',
-    gallery: ['img/YogaTravelLife.svg'],
+    gallery: [
+      'img/yogatravellife-1.png',
+      'img/yogatravellife-2.png',
+      'img/yogatravellife-3.png'
+    ],
     links: [
       { label: 'Открыть сайт →', url: 'https://yoga-travel-life.ru/' }
     ]
@@ -122,6 +131,11 @@ const projects = {
     details: 'Figma · прототипирование',
     image: '',
     gallery: ['img/Эпишик1.svg'],
+      gallery: [
+      'img/epishik-1.png',
+      'img/epishik-2.png',
+      'img/epishik-3.png'
+    ],
     links: [
       { label: 'Прототип в Figma →', url: 'https://www.figma.com/proto/eBAF92HhgSqzkDngjKaXrT/' },
       { label: 'Дизайн в Figma →', url: 'https://www.figma.com/design/eBAF92HhgSqzkDngjKaXrT/' }
@@ -133,16 +147,53 @@ const projects = {
     description: '\nЗадача\nInCube — молодая студия без сформированного портфолио. Нужен сайт-витрина, который одновременно продаёт услуги и сам служит доказательством компетенции. Заказчик сам из веб-разработки — это значит, что дизайн должен выдерживать критический взгляд коллег по цеху.\n\nUX-решения\n· Сайт как портфолио в реальном времени — вместо раздела «наши работы» акцент на самом лендинге: качество вёрстки, анимации, внимание к деталям говорят громче скриншотов.\n· Упрощённая структура услуг — сознательно не стал дробить на множество страниц под каждое направление. Все услуги на одном экране: клиент сканирует и сразу понимает спектр, без лишних кликов.\n· Тон коммуникации — прямой и технически грамотный, без маркетинговых клише. Целевая аудитория — предприниматели, которые уже что-то слышали про разработку и не любят, когда им «льют воду».\n\nРезультат\nПрототип в Figma и финальный дизайн. Лендинг работает как самодостаточный аргумент: клиент видит уровень исполнения и принимает решение о сотрудничестве до того, как увидит кейсы студии.',
     details: 'Веб-дизайн · Figma · прототипирование',
     image: '',
+    gallery: [
+      'img/incube-1.png',
+      'img/incube-2.png',
+      'img/incube-3.png'
+    ],
     links: [
       { label: 'Прототип в Figma →', url: 'https://www.figma.com/proto/CgTOcYW52bdAbfPWvsO7va/' },
       { label: 'Дизайн в Figma →', url: 'https://www.figma.com/design/CgTOcYW52bdAbfPWvsO7va/' }
     ]
   },
-  6:  { title:'Miloslava Family', type:'Логотип', description:'Айдентика для семейного бренда.', details:'', image:'img/Miloslava.svg', links:[] },
-  7:  { title:'Polchkova', type:'Логотип', description:'Персональный логотип.', details:'', image:'img/Polchkova.svg', links:[] },
-  8:  { title:'InCube', type:'Логотип', description:'Логотип для технологичного бренда.', details:'', image:'img/InCube_color.svg', links:[] },
-  9:  { title:'EcoFind', type:'Логотип', description:'Логотип для экологического сервиса.', details:'', image:'img/EcoFind.svg', links:[] },
-  10: { title:'MaYoga', type:'Логотип', description:'Айдентика для йога-студии.', details:'', image:'img/MaYoga.svg', links:[] },
+  6:  {
+    title: 'Miloslava Family',
+    type: 'Логотип',
+    description: '\nЗадача\nMiloslava Family — семейный бренд эко-одежды ручной работы из натуральных материалов. Нужен логотип, который передаёт теплоту ручного труда, натуральность и семейные ценности.\n\nРешение\nМягкая рукописная пластика, отсылающая к ручной работе и заботе. Без агрессии, без корпоративности — тёплый, живой знак, который органично чувствует себя на бирке одежды и на витрине интернет-магазина.\n\nРезультат\nЛоготип, ставший основой айдентики бренда и интернет-магазина Miloslava Family.',
+    note: 'Цвета логотипа адаптированы под стилистику сайта. Оригинальная палитра может отличаться.',
+    details: 'Illustrator · Figma',
+    image: 'img/Miloslava.svg',
+    links: []
+  },
+  7:  {
+    title: 'Polchkova',
+    type: 'Логотип',
+    description: '\nЗадача\nПерсональный логотип для преподавателя йоги Марины Полчковой. Марина ведёт два направления — онлайн-студию MaYoga и йога-путешествия YogaTravelLife. Логотип должен работать как личный знак, объединяющий оба проекта.\n\nРешение\nЛаконичный персональный знак, который не привязан к конкретному проекту, а представляет самого преподавателя. Спокойная пластика, ощущение баланса и внутренней силы.\n\nРезультат\nЛоготип используется как личный бренд Марины Полчковой на обоих проектах.',
+    note: 'Цвета логотипа адаптированы под стилистику сайта. Оригинальная палитра может отличаться.',
+    details: 'Illustrator · Figma',
+    image: 'img/Polchkova.svg',
+    links: []
+  },
+  8:  {
+    title: 'InCube',
+    type: 'Логотип',
+    description: '\nЗадача\nInCube — молодая инди-студия веб-разработки полного цикла. Нужен логотип, который считывается как технологичный, но не корпоративный. Целевая аудитория — предприниматели, которые ценят прямоту и качество.\n\nРешение\nГеометричный, чистый знак. Без лишних деталей — как и подход самой студии. Логотип должен выдерживать критический взгляд коллег по цеху и одновременно работать как доказательство компетенции.\n\nРезультат\nЛоготип лёг в основу фирменного стиля и лендинга InCube.',
+    note: 'Цвета логотипа адаптированы под стилистику сайта. Оригинальная палитра может отличаться.',
+    details: 'Illustrator · Figma',
+    image: 'img/InCube_color.svg',
+    links: []
+  },
+  9:  { title:'EcoFind', type:'Логотип', description:'Логотип для экологического сервиса.', note:'Цвета логотипа адаптированы под стилистику сайта. Оригинальная палитра может отличаться.', details:'', image:'img/EcoFind.svg', links:[] },
+  10: {
+    title: 'MaYoga',
+    type: 'Логотип',
+    description: '\nЗадача\nMaYoga — онлайн йога-студия Марины Полчковой с живыми практиками, базой знаний, приглашёнными экспертами и закрытым сообществом. Нужен логотип, который передаёт мягкость, осознанность и ощущение ресурсного пространства.\n\nРешение\nПластичный, дышащий знак. Без эзотерики и клише — скорее ощущение внутреннего баланса и спокойной силы. Логотип должен одинаково хорошо работать на экране телефона и в чате Telegram.\n\nРезультат\nЛоготип стал визуальной основой онлайн-студии MaYoga.',
+    note: 'Цвета логотипа адаптированы под стилистику сайта. Оригинальная палитра может отличаться.',
+    details: 'Illustrator · Figma',
+    image: 'img/MaYoga.svg',
+    links: []
+  },
   11: { title:'Горячая ночь', type:'Афиша', description:'Афиша вечеринки для Fat Cat Club. Тёмная стилистика, типографика по кругу, яркий оранжевый акцент.', details:'Графический дизайн · афиша', image:'img/Горячая_ночь.png', links:[] },
   12: { title:'Коротко', type:'Баннер', description:'Промо-баннер для оффлайн-сервиса ясной речи «Коротко». Акционное предложение со скидкой, QR-код, иллюстрация.', details:'Графический дизайн · баннер', image:'img/Коротко.png', links:[] },
   13: {
@@ -151,29 +202,13 @@ const projects = {
     description: 'Интернет-магазин эко-вещей для семьи. Описание уточняется.',
     details: 'Веб-дизайн · вёрстка',
     image: '',
-    gallery: ['img/Miloslavafamily.svg'],
+     gallery: [
+      'img/miloslavafamily-1.png',
+      'img/miloslavafamily-2.png',
+      'img/miloslavafamily-3.png'
+    ],
     links: [
       { label: 'Открыть сайт →', url: 'https://www.miloslavafamily.ru/' }
-    ]
-  },
-  14: {
-    title: 'NewAgeSchool',
-    type: 'Сайт',
-    description: 'Сайт дистанционной школы NewAgeSchool — онлайн-образование без политических границ. 500+ учеников, 44% из-за рубежа, 4 года работы.\n\nНаправления: математика, кодинг, английский, физика. Коучинговый подход, практико-ориентированность, преподавание на двух языках (русский и английский).\n\nИндивидуальные образовательно-карьерные треки, подготовка к олимпиадам и экзаменам, развитие коммуникативных навыков.',
-    details: 'Веб-дизайн · вёрстка · адаптив',
-    image: '',
-    links: [
-      { label: 'Открыть сайт →', url: 'https://www.newage.school/' }
-    ]
-  },
-  15: {
-    title: 'Ульяна Коретковская',
-    type: 'Сайт',
-    description: 'Сайт студии эстетики лица и тела Ульяны Коретковской. Описание уточняется.',
-    details: 'Веб-дизайн · вёрстка',
-    image: '',
-    links: [
-      { label: 'Открыть сайт →', url: 'https://ulyanakoretkowska.ru/' }
     ]
   },
   16: { title:'Прогулки в лесу', type:'Афиша', description:'Афиша зимнего мероприятия «Прогулки в лесу». AI-иллюстрация зимнего леса, типографика, коллаборация Зеленоград × Щепка.', details:'Графический дизайн · афиша', image:'img/Прогулки_в_лесу.png', links:[] },
@@ -202,6 +237,21 @@ function openPopup(id) {
   });
   descHtml = descHtml.replace(/\n/g, '<br>');
   popup.querySelector('.popup__description').innerHTML = descHtml;
+
+  // сноска (например, про цвета логотипа)
+  let noteEl = popup.querySelector('.popup__note');
+  if (!noteEl) {
+    noteEl = document.createElement('p');
+    noteEl.className = 'popup__note';
+    popup.querySelector('.popup__description').after(noteEl);
+  }
+  if (p.note) {
+    noteEl.textContent = p.note;
+    noteEl.style.display = '';
+  } else {
+    noteEl.textContent = '';
+    noteEl.style.display = 'none';
+  }
 
   // чипы инструментов
   const toolsEl = popup.querySelector('.popup__tools');
@@ -281,11 +331,13 @@ function openPopup(id) {
     imgWrapper.classList.remove('popup__logo-wrapper--clean');
   }
   popup.classList.add('popup--open');
+  document.documentElement.style.overflow = 'hidden';
   document.body.style.overflow = 'hidden';
 }
 
 function closePopup() {
   popup.classList.remove('popup--open');
+  document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
 }
 
@@ -347,20 +399,27 @@ document.addEventListener('DOMContentLoaded', () => {
   window.openLightbox = function(src, alt) {
     lightboxImg.src = src; lightboxImg.alt = alt || '';
     lightbox.classList.add('lightbox--open');
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
   };
   function closeLightbox() {
     lightbox.classList.remove('lightbox--open');
+    document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
   }
   lightbox.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-  // клик по карточке → попап
+  // клик по карточке → попап или лайтбокс (для афиш)
   grid.addEventListener('click', (e) => {
     const card = e.target.closest('.card');
     if (!card) return;
     if (card.classList.contains('card--poster-placeholder')) return;
+    if (card.classList.contains('card--poster')) {
+      const img = card.querySelector('.card__poster-img');
+      if (img) window.openLightbox(img.src, img.alt);
+      return;
+    }
     openPopup(card.dataset.projectId);
   });
 
