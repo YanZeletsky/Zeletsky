@@ -237,7 +237,7 @@ const projects = {
       { label: 'Макеты в Figma →', url: 'https://www.figma.com/design/TsGesv1eTUmB83RZGk29Br/' }
     ]
   }
-   
+   };
 
 /* ══════════════════════════════════════
    🪟 Попап
