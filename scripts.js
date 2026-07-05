@@ -231,8 +231,8 @@ const projects = {
     ],
     popupBg: '#FFFFFF',
     links: [
-      { label: 'Открыть прототип →', url: 'https://yanzeletsky.github.io/MicroPlant/' },
-      { label: 'Макеты в Figma →', url: 'https://www.figma.com/design/TsGesv1eTUmB83RZGk29Br/' }
+      { label: 'Открыть прототип →', url: 'https://yanzeletsky.github.io/Ipoteka/' },
+      { label: 'Видео в VK →', url: 'https://www.figma.com/design/TsGesv1eTUmB83RZGk29Br/' }
     ]
   }
    };
