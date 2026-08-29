@@ -234,7 +234,7 @@ const projects = {
       { label: 'Открыть прототип →', url: 'https://yanzeletsky.github.io/Ipoteka/' },
       { label: 'Видео в VK →', url: 'https://vkvideo.ru/video-239041389_456239018' }
     ]
-  }
+  },
    22: {
     title: 'FlowPay — цифровой банк с ИИ-арбитром',
     type: 'UX/UI, продуктовый дизайн, прототипирование',
