@@ -247,7 +247,7 @@ const projects = {
     popupBg: '#FFFFFF',
     links: [
       { label: 'Открыть прототип →', url: 'https://yanzeletsky.github.io/FlowPay/' },
-      { label: 'Видео в VK →', url: 'https://vkvideo.ru/video-239041389_456239018' }
+      { label: 'Видео в VK →', url: 'https://vkvideo.ru/video-239041389_456239024' }
     ]
   }
    };
