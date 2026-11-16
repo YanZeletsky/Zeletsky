@@ -535,3 +535,44 @@ document.addEventListener('DOMContentLoaded', () => {
 /* 🔒 Защита от копирования */
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 document.addEventListener('dragstart', (e) => e.preventDefault());
+
+
+/* Переключение вкладок в блоке «Обо мне» */
+(function() {
+  const tabs = Array.from(document.querySelectorAll('.about__tab[data-about-tab]'));
+  const panels = Array.from(document.querySelectorAll('.about__panel[role="tabpanel"]'));
+  if (!tabs.length || !panels.length) return;
+
+  function activateTab(tab, moveFocus) {
+    const panelId = tab.getAttribute('aria-controls');
+
+    tabs.forEach((item) => {
+      const selected = item === tab;
+      item.classList.toggle('about__tab--active', selected);
+      item.setAttribute('aria-selected', selected ? 'true' : 'false');
+      item.tabIndex = selected ? 0 : -1;
+    });
+
+    panels.forEach((panel) => {
+      const active = panel.id === panelId;
+      panel.hidden = !active;
+      panel.classList.toggle('about__panel--active', active);
+    });
+
+    if (moveFocus) tab.focus();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateTab(tab, false));
+    tab.addEventListener('keydown', (event) => {
+      let nextIndex = index;
+      if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+      else if (event.key === 'Home') nextIndex = 0;
+      else if (event.key === 'End') nextIndex = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      activateTab(tabs[nextIndex], true);
+    });
+  });
+})();
