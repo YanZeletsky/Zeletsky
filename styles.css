@@ -648,12 +648,15 @@ body {
   gap: 1.2rem;
 }
 .about__intro {
-  display: flex; align-items: center; gap: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 2rem;
 }
 .about__photo-wrap {
-  flex-shrink: 0;
-  width: 140px; height: 140px;
-  border-radius: 50%;
+  width: 100%;
+  min-height: 100%;
+  border-radius: 22px;
   overflow: hidden;
   border: 2px solid rgba(124,183,124,0.25);
 }
