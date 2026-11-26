@@ -364,3 +364,9 @@ body[data-view="mobile"] .case-detail--art .art-case__image img{
 /* Compact placeholder typography on narrow screens. */
 body[data-view="mobile"] .web-update__content{min-width:0;max-width:100%}
 body[data-view="mobile"] .web-update__content h2{font-size:clamp(20px,6vw,26px);line-height:1.12;overflow-wrap:anywhere}
+
+/* Full viewport; screen mode follows the viewport automatically. */
+.bar[hidden]{display:none!important}
+body[data-view="desktop"] .stage{inset:0}
+body[data-view="desktop"] .home{padding-top:var(--outer-pad)}
+body.is-real-mobile[data-view="mobile"] .home{padding-top:max(var(--outer-pad),env(safe-area-inset-top));padding-bottom:max(var(--outer-pad),env(safe-area-inset-bottom))}

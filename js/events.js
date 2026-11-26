@@ -122,7 +122,7 @@ viewButtons.forEach(function(button) {
 });
 function syncReal() {
   body.classList.toggle("is-real-mobile", narrowMQ.matches);
-  if (narrowMQ.matches) setView("mobile", false);
+  setView(narrowMQ.matches ? "mobile" : "desktop", false);
 }
 narrowMQ.addEventListener("change", syncReal);
 syncReal();
