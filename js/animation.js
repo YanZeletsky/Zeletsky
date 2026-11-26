@@ -52,8 +52,11 @@ function frame(now) {
     gl.uniform2f(u.uStage, sw, sh);
     gl.uniform2f(u.uOrigin, o.card.offsetLeft, sh - (o.card.offsetTop + ch));
     gl.uniform2f(u.uCardSize, cw, ch);
-    gl.uniform2f(u.uPointer, ptr.x, ptr.y);
-    gl.uniform1f(u.uHoverOn, ptr.on);
+    // Touch screens have no hover: gently illuminate each card by default.
+    const mobileGlow = body.classList.contains('is-real-mobile');
+    gl.uniform2f(u.uPointer, mobileGlow ? o.card.offsetLeft + cw / 2 : ptr.x,
+      mobileGlow ? sh - o.card.offsetTop - ch / 2 : ptr.y);
+    gl.uniform1f(u.uHoverOn, mobileGlow ? 0.85 : ptr.on);
     gl.uniform2f(u.uRes, o.cv.width, o.cv.height);
     applyPalette(gl, u, PALETTES[palIdx]);
     gl.bindBuffer(gl.ARRAY_BUFFER, o.quad);

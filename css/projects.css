@@ -388,3 +388,15 @@ a, button, [role="button"], input, select, textarea { -webkit-tap-highlight-colo
 /* Match the image background when its proportions differ from the frame. */
 .case-detail--flowpay[data-case-id="1"] .case-v1__cover,
 .case-detail--flowpay[data-case-id="1"].case-detail--mobile-flowpay .case-v1__photo-placeholder{background:#f4f8f4}
+
+/* Soft screen changes; the destination remains responsive during the fade. */
+::view-transition-old(root), ::view-transition-new(root){animation-duration:360ms;animation-timing-function:ease-in-out}
+@media (prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation-duration:0s}}
+
+/* The same round back control on touch devices as in the desktop category. */
+body[data-view="mobile"][data-screen="section"][data-section-id] .portfolio-side__top{min-height:40px}
+body[data-view="mobile"][data-screen="section"][data-section-id] .back-link{flex:0 0 40px;width:40px;height:40px;min-width:40px;min-height:40px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(255,255,255,.14);color:#fff;transition:background .35s ease,border-color .35s ease}
+body[data-view="mobile"][data-screen="section"][data-section-id] .back-link svg{width:17px;height:17px;transition:transform .35s ease}
+body[data-view="mobile"][data-screen="section"][data-section-id] .back-link:active{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.42)}
+body[data-view="mobile"][data-screen="section"][data-section-id] .back-link:active svg{transform:rotate(-45deg)}
+@media (prefers-reduced-motion:reduce){body[data-view="mobile"][data-screen="section"][data-section-id] .back-link,body[data-view="mobile"][data-screen="section"][data-section-id] .back-link svg{transition:none}}

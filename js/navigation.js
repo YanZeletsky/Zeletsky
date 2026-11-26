@@ -1,6 +1,6 @@
 /* Lightweight screen transitions; navigation is applied immediately. */
 const flowReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-let flowAnimation = null, flowSheenTimer = null;
+let flowAnimation = null, flowViewTransition = null, flowSheenTimer = null;
 const flowImages = new Map();
 
 /* The initial category must not wait until navigation to request its artwork. */
@@ -28,28 +28,34 @@ function flowCarousel() {
 }
 
 function flowNavigate(change) {
-  // A new action always takes effect immediately, even during an earlier fade.
-  if (flowAnimation) {
-    flowAnimation.cancel();
-    flowAnimation = null;
+  // Let a new navigation interrupt the previous visual effect.
+  if (flowAnimation) { flowAnimation.cancel(); flowAnimation = null; }
+  if (flowViewTransition) { flowViewTransition.skipTransition(); flowViewTransition = null; }
+  if (flowReduced.matches) { change(); return true; }
+
+  // Browser snapshots blend the old and new screens without a pause before navigation.
+  if (document.startViewTransition) {
+    try {
+      const transition = document.startViewTransition(change);
+      flowViewTransition = transition;
+      transition.finished.catch(function() {}).then(function() {
+        if (flowViewTransition === transition) flowViewTransition = null;
+      });
+      return true;
+    } catch (error) { /* Fall back to a simple fade on unsupported browsers. */ }
   }
   change();
-  if (flowReduced.matches || !Element.prototype.animate) return true;
-
+  if (!Element.prototype.animate) return true;
   const incoming = body.dataset.screen === "project" ? caseDetail :
     body.dataset.screen === "section" ? sectionEl : homeEl;
   try {
-    const animation = incoming.animate([
-      {opacity: .72},
-      {opacity: 1}
-    ], {duration: 220, easing: "ease-out"});
+    const animation = incoming.animate([{opacity: 0}, {opacity: 1}],
+      {duration: 360, easing: "ease-out"});
     flowAnimation = animation;
     animation.finished.catch(function() {}).then(function() {
       if (flowAnimation === animation) flowAnimation = null;
     });
-  } catch (error) {
-    // Navigation remains usable even if animation is unsupported.
-  }
+  } catch (error) { /* Navigation still works without animation. */ }
   return true;
 }
 
