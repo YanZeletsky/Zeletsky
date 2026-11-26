@@ -400,3 +400,11 @@ body[data-view="mobile"][data-screen="section"][data-section-id] .back-link svg{
 body[data-view="mobile"][data-screen="section"][data-section-id] .back-link:active{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.42)}
 body[data-view="mobile"][data-screen="section"][data-section-id] .back-link:active svg{transform:rotate(-45deg)}
 @media (prefers-reduced-motion:reduce){body[data-view="mobile"][data-screen="section"][data-section-id] .back-link,body[data-view="mobile"][data-screen="section"][data-section-id] .back-link svg{transition:none}}
+
+/* One mobile navigation size, matching the home category arrows. */
+body[data-view="mobile"][data-screen="section"][data-section-id] .portfolio-side__top{min-height:34px}
+body[data-view="mobile"][data-screen="section"][data-section-id] .back-link{flex:0 0 34px;width:34px;height:34px;min-width:34px;min-height:34px}
+body[data-view="mobile"][data-screen="section"][data-section-id] .mobile-category-breadcrumb{min-height:34px;padding:0 11px;border:1px solid rgba(255,255,255,.16);border-radius:100px;background:rgba(255,255,255,.04);box-sizing:border-box}
+body[data-view="mobile"] .case-detail .case-back svg{box-sizing:border-box;flex:0 0 34px;width:34px;height:34px;padding:8px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(255,255,255,.14);transition:background .35s ease,border-color .35s ease,transform .35s ease}
+body[data-view="mobile"] .case-detail .case-back:active svg{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.42);transform:rotate(-45deg)}
+@media(prefers-reduced-motion:reduce){body[data-view="mobile"] .case-detail .case-back svg{transition:none}}

@@ -151,7 +151,7 @@ const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16) / 255);
 const prefersReduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let pointScale = 1;
 function pixelRatio() {
-  return pointScale;
+  return pointScale * (window.matchMedia("(max-width: 760px)").matches ? 0.7 : 1);
 }
 
 function compile(gl, type, src) {

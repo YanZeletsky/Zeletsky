@@ -18,7 +18,7 @@ window.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') ptr.o
 document.addEventListener('pointerleave', () => { ptr.onT = 0; });
 
 let last = performance.now(), clock = 2.2;
-let fpsFrames = 0, fpsStamp = performance.now();
+let fpsFrames = 0, fpsStamp = performance.now(), lastMobileDraw = 0;
 const fpsEl = document.getElementById('fps');
 const ptsEl = document.getElementById('pts');
 const ptsVal = document.getElementById('ptsVal');
@@ -38,6 +38,13 @@ function frame(now) {
     fpsStamp = now;
   }
   if (!prefersReduce) clock += dt;
+  const mobile = body.classList.contains('is-real-mobile');
+  // Limit GPU work on phones while retaining continuous animation timing.
+  if (document.hidden || (mobile && now - lastMobileDraw < 33)) {
+    requestAnimationFrame(frame);
+    return;
+  }
+  if (mobile) lastMobileDraw = now;
   const sw = stage.clientWidth, sh = stage.clientHeight;
   ptr.x += (ptr.tx - ptr.x) * Math.min(1, dt * 8);
   ptr.y += (ptr.ty - ptr.y) * Math.min(1, dt * 8);
@@ -45,6 +52,8 @@ function frame(now) {
   fx.forEach(o => {
     const gl = o.gl;
     if (!gl || !o.prog || !o.card.offsetWidth || !o.card.offsetHeight) return;
+    // Home canvases retain dimensions when hidden; avoid rendering behind other screens.
+    if (o.card.classList.contains('card') && body.dataset.screen) return;
     gl.useProgram(o.prog.prog);
     const u = o.prog.u;
     const cw = o.card.offsetWidth, ch = o.card.offsetHeight;
@@ -53,7 +62,7 @@ function frame(now) {
     gl.uniform2f(u.uOrigin, o.card.offsetLeft, sh - (o.card.offsetTop + ch));
     gl.uniform2f(u.uCardSize, cw, ch);
     // Touch screens have no hover: gently illuminate each card by default.
-    const mobileGlow = body.classList.contains('is-real-mobile');
+    const mobileGlow = mobile;
     gl.uniform2f(u.uPointer, mobileGlow ? o.card.offsetLeft + cw / 2 : ptr.x,
       mobileGlow ? sh - o.card.offsetTop - ch / 2 : ptr.y);
     gl.uniform1f(u.uHoverOn, mobileGlow ? 0.85 : ptr.on);
