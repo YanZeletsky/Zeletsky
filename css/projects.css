@@ -245,7 +245,7 @@ body[data-view="mobile"][data-screen="section"][data-section-id="art"] .work-gri
 .web-update__content span{color:rgba(255,255,255,.6);font-size:10px;font-weight:600;letter-spacing:.16em}
 .web-update__content h2{margin:12px 0 8px;color:#fafaff;font-size:clamp(30px,4vw,56px);letter-spacing:-.055em;line-height:1.05}
 .web-update__content p{margin:0;color:rgba(255,255,255,.7);font-size:clamp(13px,1.3vw,16px);line-height:1.45}
-body:is([data-section-id="dev"],[data-section-id="games"])[data-screen="section"] .work-grid,body:is([data-section-id="dev"],[data-section-id="games"])[data-screen="section"] .carousel-indicators,body:is([data-section-id="dev"],[data-section-id="games"])[data-screen="section"] .work-count{display:none!important}
+body[data-section-id="games"][data-screen="section"] .work-grid,body[data-section-id="games"][data-screen="section"] .carousel-indicators,body[data-section-id="games"][data-screen="section"] .work-count{display:none!important}
 body[data-view="mobile"][data-screen="section"]:is([data-section-id="dev"],[data-section-id="games"]) .web-update{padding:0}
 body[data-view="mobile"][data-screen="section"]:is([data-section-id="dev"],[data-section-id="games"]) .web-update__card{width:100%;height:100%;min-height:0;max-height:none;padding:24px;border-radius:22px}
 body[data-view="mobile"] .case-detail--art .art-case__image{height:min(52vh,460px);min-height:0}
@@ -416,3 +416,6 @@ body[data-view="mobile"] .case-detail #caseBack > span{display:inline;white-spac
 body[data-view="mobile"] .case-detail #caseBack:focus-visible{outline:2px solid #fff;outline-offset:3px}
 body[data-view="mobile"] .case-v1__prototype,body[data-view="mobile"] .case-v1__tab{touch-action:manipulation}
 body[data-view="mobile"] .case-detail--flowpay.case-detail--mobile-flowpay .case-detail__inner.case-v1{grid-template-rows:38px minmax(0,1fr)}
+
+/* A single Web project has no carousel to navigate. */
+body[data-screen="section"][data-section-id="dev"] .carousel-indicators{display:none!important}

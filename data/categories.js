@@ -1,5 +1,5 @@
 const SECTION_PROJECTS = {
-  dev:["3","4","5","13"],
+  dev:["4"],
   art:["art_contours", "art_pull", "art_chip", "art_decisions", "art_buddha", "art_rooftops", "art_mountains"],
   games:["soundfield"],
   design:["22","1","2","21"]

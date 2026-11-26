@@ -144,7 +144,7 @@ function moveCarousel(direction) {
 }
 function renderWorkGrid() {
   const placeholder = document.getElementById("webUpdate");
-  const isUpdating = activeSection === "dev" || activeSection === "games";
+  const isUpdating = activeSection === "games";
   placeholder.hidden = !isUpdating;
   if (isUpdating) {
     placeholder.querySelector(".web-update__content span").textContent = (activeSection === "games" ? "PLAY" : "WEB") + " · ПОРТФОЛИО";
@@ -160,7 +160,7 @@ function renderWorkGrid() {
   if (carouselIndex >= ids.length) carouselIndex = 0;
   workCount.textContent = String(carouselIndex + 1).padStart(2, "0") + " / " + String(ids.length).padStart(2, "0");
   carouselIndicators.innerHTML = "";
-  const displayedIds = body.dataset.view === "mobile" && ids.length ? Array.from({length: 15}, function() { return ids; }).flat() : ids;
+  const displayedIds = body.dataset.view === "mobile" && ids.length > 1 ? Array.from({length: 15}, function() { return ids; }).flat() : ids;
   workGrid.innerHTML = displayedIds.map(function(id, displayedIndex) {
     const index = displayedIndex % ids.length;
     const group = Math.floor(displayedIndex / ids.length);
@@ -192,7 +192,7 @@ function renderWorkGrid() {
   });
   updateCarouselSlots();
   workGrid.setAttribute("aria-label", body.dataset.view === "mobile" ? "Проекты категории" : "Карусель проектов");
-  if (body.dataset.view === "mobile" && ids.length) {
+  if (body.dataset.view === "mobile" && ids.length > 1) {
     requestAnimationFrame(function() {
       const middle = workGrid.querySelector('[data-loop-group="7"]');
       if (middle) workGrid.scrollTop = middle.offsetTop - workGrid.offsetTop;
