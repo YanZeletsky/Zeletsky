@@ -1,8 +1,6 @@
-/* FLOW MOTION: controlled crossfade plus linked card travel.
-   Deterministic on first entry, return and case navigation even from file://. */
+/* Lightweight screen transitions; navigation is applied immediately. */
 const flowReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-const flowEase = "cubic-bezier(.22,1,.36,1)";
-let flowBusy = false, flowSheenTimer = null;
+let flowAnimation = null, flowSheenTimer = null;
 const flowImages = new Map();
 
 /* The initial category must not wait until navigation to request its artwork. */
@@ -29,147 +27,47 @@ function flowCarousel() {
   }, 820);
 }
 
-function flowPortal(source) {
-  if (!source || !source.getBoundingClientRect) return null;
-  const rect = source.getBoundingClientRect();
-  if (rect.width < 8 || rect.height < 8 ||
-      rect.bottom < 0 || rect.top > window.innerHeight ||
-      rect.right < 0 || rect.left > window.innerWidth) return null;
-
-  const portal = document.createElement("div");
-  portal.className = "flow-portal";
-  portal.setAttribute("aria-hidden", "true");
-  Object.assign(portal.style, {
-    left: rect.left + "px",
-    top: rect.top + "px",
-    width: rect.width + "px",
-    height: rect.height + "px",
-    borderRadius: getComputedStyle(source.closest(".work-card, .card") || source).borderRadius || "26px"
-  });
-
-  const picture = source.matches("img") ? source : source.querySelector("img");
-  if (picture && (picture.currentSrc || picture.src)) {
-    const img = document.createElement("img");
-    img.src = picture.currentSrc || picture.src;
-    img.alt = "";
-    portal.appendChild(img);
+function flowNavigate(change) {
+  // A new action always takes effect immediately, even during an earlier fade.
+  if (flowAnimation) {
+    flowAnimation.cancel();
+    flowAnimation = null;
   }
-  document.body.appendChild(portal);
-  return {element:portal,rect:rect};
-}
+  change();
+  if (flowReduced.matches || !Element.prototype.animate) return true;
 
-function flowNavigate(change, sourceFn, destFn) {
-  if (flowBusy) return false;
-  if (flowReduced.matches || !Element.prototype.animate) {
-    change();
-    return true;
-  }
-
-  flowBusy = true;
-  let applied = false, outgoingAnimation = null, incomingAnimation = null, travelAnimation = null;
-  const outgoing = body.dataset.screen === "project" ? caseDetail :
+  const incoming = body.dataset.screen === "project" ? caseDetail :
     body.dataset.screen === "section" ? sectionEl : homeEl;
-  let source = null;
-  try { source = sourceFn && sourceFn(); } catch (e) {}
-  /* Never create a giant overlay when switching desktop/mobile on the same stage. */
-  const sourcePortal = source === stage ? null : flowPortal(source);
-
-  function applyChange() {
-    if (applied) return;
-    applied = true;
-    change();
-  }
-  function cleanup() {
-    if (outgoingAnimation) outgoingAnimation.cancel();
-    if (incomingAnimation) incomingAnimation.cancel();
-    if (travelAnimation) travelAnimation.cancel();
-    if (sourcePortal) sourcePortal.element.remove();
-    delete body.dataset.flowPhase;
-    flowBusy = false;
-  }
-
   try {
-    body.dataset.flowPhase = "exit";
-    outgoingAnimation = outgoing.animate([
-      {opacity:1,filter:"blur(0px)",transform:"translateY(0) scale(1)"},
-      {opacity:.12,filter:"blur(3px)",transform:"translateY(-3px) scale(.99)"}
-    ], {duration:355,easing:"cubic-bezier(.38,0,.56,1)",fill:"forwards"});
-
-    outgoingAnimation.finished.catch(function() {}).then(function() {
-      applyChange();
-      /* Old view is now hidden by the screen state; cancel its fill safely. */
-      outgoingAnimation.cancel();
-      outgoingAnimation = null;
-      body.dataset.flowPhase = "enter";
-
-      const incoming = body.dataset.screen === "project" ? caseDetail :
-        body.dataset.screen === "section" ? sectionEl : homeEl;
-      incomingAnimation = incoming.animate([
-        {opacity:0,filter:"blur(7px)",transform:"translateY(9px) scale(1.013)"},
-        {opacity:1,filter:"blur(0px)",transform:"translateY(0) scale(1)"}
-      ], {duration:785,easing:flowEase,fill:"both"});
-
-      if (sourcePortal) {
-        let destination = null;
-        try { destination = destFn && destFn(); } catch (e) {}
-        const endRect = destination && destination.getBoundingClientRect();
-        const from = sourcePortal.rect;
-        if (endRect && endRect.width > 8 && endRect.height > 8) {
-          const x = endRect.left - from.left, y = endRect.top - from.top;
-          const sx = endRect.width / from.width, sy = endRect.height / from.height;
-          travelAnimation = sourcePortal.element.animate([
-            {opacity:.82,filter:"blur(0px)",transform:"translate(0px,0px) scale(1,1)"},
-            {opacity:.7,filter:"blur(2px)",transform:"translate(" + (x*.55) + "px," + (y*.55) + "px) scale(" + (1+(sx-1)*.55) + "," + (1+(sy-1)*.55) + ")",offset:.55},
-            {opacity:0,filter:"blur(6px)",transform:"translate(" + x + "px," + y + "px) scale(" + sx + "," + sy + ")"}
-          ], {duration:785,easing:flowEase,fill:"forwards"});
-        }
-      }
-      return incomingAnimation.finished.catch(function() {});
-    }).catch(function() {
-      /* If a motion fails, the destination still opens. */
-      try { applyChange(); } catch (e) {}
-    }).finally(cleanup);
-    return true;
+    const animation = incoming.animate([
+      {opacity: .72},
+      {opacity: 1}
+    ], {duration: 220, easing: "ease-out"});
+    flowAnimation = animation;
+    animation.finished.catch(function() {}).then(function() {
+      if (flowAnimation === animation) flowAnimation = null;
+    });
   } catch (error) {
-    try { applyChange(); } finally { cleanup(); }
-    return true;
+    // Navigation remains usable even if animation is unsupported.
   }
+  return true;
 }
 
 function openSection(id) {
   if (!SECTION_DATA[id] || body.dataset.screen) return;
-  return flowNavigate(
-    function() { openSectionInstant(id); },
-    function() { return document.querySelector('.home .card[data-dir="' + id + '"]'); },
-    function() { return workGrid.querySelector('.work-card[data-slot="hero"]') || workGrid.querySelector(".work-card"); }
-  );
+  return flowNavigate(function() { openSectionInstant(id); });
 }
 function closeSection() {
   if (body.dataset.screen !== "section") return;
-  const id = activeSection;
-  return flowNavigate(
-    closeSectionInstant,
-    function() { return workGrid.querySelector('.work-card[data-slot="hero"]') || workGrid.querySelector(".work-card"); },
-    function() { return document.querySelector('.home .card[data-dir="' + id + '"]'); }
-  );
+  return flowNavigate(closeSectionInstant);
 }
 function openProject(id, trigger) {
   if (body.dataset.screen !== "section") return;
-  return flowNavigate(
-    function() { openProjectInstant(id, trigger); },
-    function() { return trigger && (trigger.querySelector(".work-card__image") || trigger); },
-    function() { return caseDetail.querySelector(".case-hero__media"); }
-  );
+  return flowNavigate(function() { openProjectInstant(id, trigger); });
 }
 function closeProject() {
   if (body.dataset.screen !== "project") return;
-  return flowNavigate(
-    closeProjectInstant,
-    function() { return caseDetail.querySelector(".case-hero__media"); },
-    function() { return projectReturn && projectReturn.isConnected ?
-      (projectReturn.querySelector(".work-card__image") || projectReturn) :
-      workGrid.querySelector('.work-card[data-slot="hero"] .work-card__image'); }
-  );
+  return flowNavigate(closeProjectInstant);
 }
 function openSectionInstant(id) {
   const data = SECTION_DATA[id];

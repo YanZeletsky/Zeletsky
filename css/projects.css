@@ -370,3 +370,21 @@ body[data-view="mobile"] .web-update__content h2{font-size:clamp(20px,6vw,26px);
 body[data-view="desktop"] .stage{inset:0}
 body[data-view="desktop"] .home{padding-top:var(--outer-pad)}
 body.is-real-mobile[data-view="mobile"] .home{padding-top:max(var(--outer-pad),env(safe-area-inset-top));padding-bottom:max(var(--outer-pad),env(safe-area-inset-bottom))}
+
+/* Remove the mobile browser's tap flash while retaining keyboard focus styles. */
+a, button, [role="button"], input, select, textarea { -webkit-tap-highlight-color: transparent; }
+
+/* Consistent project actions and a roomier mobile cover. */
+.case-detail--flowpay .case-v1__actions{flex-wrap:wrap}
+.case-detail--flowpay .case-v1__actions .case-v1__prototype{background:transparent}
+@media (min-width:761px){
+ .case-detail--flowpay .case-v1__cover img{min-width:0;min-height:0;object-fit:contain}
+}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__copy{justify-content:flex-start}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__photo-placeholder{flex:1 0 clamp(160px,25vh,240px);min-height:160px;max-height:none}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__identity,.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__details{flex:0 0 auto}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__actions{margin-top:12px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__actions .case-v1__prototype{flex:1 1 140px}
+/* Match the image background when its proportions differ from the frame. */
+.case-detail--flowpay[data-case-id="1"] .case-v1__cover,
+.case-detail--flowpay[data-case-id="1"].case-detail--mobile-flowpay .case-v1__photo-placeholder{background:#f4f8f4}
