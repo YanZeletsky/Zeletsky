@@ -1,6 +1,6 @@
 /* Lightweight screen transitions; navigation is applied immediately. */
 const flowReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-let flowAnimation = null, flowViewTransition = null, flowSheenTimer = null;
+let flowAnimation = null, flowSheenTimer = null;
 const flowImages = new Map();
 
 /* The initial category must not wait until navigation to request its artwork. */
@@ -30,20 +30,8 @@ function flowCarousel() {
 function flowNavigate(change) {
   // Let a new navigation interrupt the previous visual effect.
   if (flowAnimation) { flowAnimation.cancel(); flowAnimation = null; }
-  if (flowViewTransition) { flowViewTransition.skipTransition(); flowViewTransition = null; }
   if (flowReduced.matches) { change(); return true; }
-
-  // Browser snapshots blend the old and new screens without a pause before navigation.
-  if (document.startViewTransition) {
-    try {
-      const transition = document.startViewTransition(change);
-      flowViewTransition = transition;
-      transition.finished.catch(function() {}).then(function() {
-        if (flowViewTransition === transition) flowViewTransition = null;
-      });
-      return true;
-    } catch (error) { /* Fall back to a simple fade on unsupported browsers. */ }
-  }
+  // Animate the live screen: WebGL canvases cannot reliably be captured in snapshots.
   change();
   if (!Element.prototype.animate) return true;
   const incoming = body.dataset.screen === "project" ? caseDetail :

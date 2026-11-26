@@ -258,6 +258,18 @@ if (updateGl) {
   entry.prog = makeProgram(updateGl);
   fx.push(entry);
 }
+// Browsers can reclaim WebGL resources on memory-constrained devices.
+fx.forEach(o => {
+  o.cv.addEventListener('webglcontextlost', event => { event.preventDefault(); o.prog = null; });
+  o.cv.addEventListener('webglcontextrestored', () => {
+    const gl = o.gl;
+    o.quad = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, o.quad);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+    o.prog = makeProgram(gl);
+    gl.viewport(0, 0, o.cv.width, o.cv.height);
+  });
+});
 function resizeFx() {
   const dpr = pixelRatio();
   fx.forEach(o => {

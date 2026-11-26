@@ -408,3 +408,11 @@ body[data-view="mobile"][data-screen="section"][data-section-id] .mobile-categor
 body[data-view="mobile"] .case-detail .case-back svg{box-sizing:border-box;flex:0 0 34px;width:34px;height:34px;padding:8px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(255,255,255,.14);transition:background .35s ease,border-color .35s ease,transform .35s ease}
 body[data-view="mobile"] .case-detail .case-back:active svg{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.42);transform:rotate(-45deg)}
 @media(prefers-reduced-motion:reduce){body[data-view="mobile"] .case-detail .case-back svg{transition:none}}
+
+/* One complete back button: icon and label share a single bordered surface. */
+body[data-view="mobile"][data-screen="section"][data-section-id] .back-link{display:inline-flex;align-items:center;justify-content:flex-start;gap:10px;flex:0 1 auto;width:auto;height:auto;min-width:0;min-height:44px;padding:4px 14px 4px 4px;border:1px solid rgba(255,255,255,.2);border-radius:24px;background:transparent}
+body[data-view="mobile"][data-screen="section"][data-section-id] .back-link svg{flex:0 0 34px;width:34px;height:34px;box-sizing:border-box;padding:8px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(255,255,255,.1)}
+body[data-view="mobile"][data-screen="section"][data-section-id] .back-link .mobile-category-breadcrumb{min-height:0;padding:0;border:0;background:none}
+body[data-view="mobile"] .case-detail .case-back{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:4px 14px 4px 4px;border:1px solid rgba(255,255,255,.2);border-radius:24px;background:transparent;color:#fafaff;box-sizing:border-box}
+body[data-view="mobile"] .case-detail .case-back:focus-visible{outline:2px solid #fff;outline-offset:3px}
+body[data-view="mobile"] .back-link,body[data-view="mobile"] .case-back,body[data-view="mobile"] .case-v1__prototype,body[data-view="mobile"] .case-v1__tab{touch-action:manipulation}
