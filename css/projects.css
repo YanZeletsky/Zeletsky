@@ -1,0 +1,366 @@
+/* THIRD LEVEL — FlowPay: text tabs left, one active device screen and vertical screen selector right. */
+.case-v1__desktop-window{display:none}
+.case-detail--flowpay{overflow:hidden!important;padding:clamp(12px,1.8vw,28px);background:radial-gradient(ellipse at 76% 44%,rgba(21,113,91,.17),transparent 42%),#080c0a;touch-action:pan-x;scrollbar-width:none}
+.case-detail--flowpay .case-detail__inner.case-v1{width:100%;height:100%;max-width:1560px;margin:0 auto;overflow:hidden;display:grid;grid-template-rows:42px minmax(0,1fr);gap:12px}
+.case-detail--flowpay .case-v1__top{display:flex;align-items:center;justify-content:space-between;gap:18px;min-width:0;margin:0;padding:0 2px 9px;border-bottom:1px solid rgba(255,255,255,.11)}
+.case-detail--flowpay .case-back{display:inline-flex;align-items:center;gap:10px;flex:none;min-height:32px;padding:0;border:0;border-radius:0;background:transparent;color:rgba(240,247,244,.88);font:500 12px/1 var(--font);text-decoration:none}
+.case-detail--flowpay .case-back:hover{border:0;background:transparent;color:#fff}.case-detail--flowpay .case-back:focus-visible{outline:none;color:#fff}
+.case-detail--flowpay .case-back svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+.case-v1__brand{color:rgba(230,242,237,.34);font-size:9px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.case-v1__counter{display:flex;align-items:center;gap:10px;color:rgba(240,247,244,.66);font-size:11px;letter-spacing:.1em;white-space:nowrap}.case-v1__counter #caseScreenIndex{color:#5fe6cc}
+.case-v1__counter button{width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:rgba(255,255,255,.68);font:21px/1 var(--font);cursor:pointer}.case-v1__counter button:hover{background:rgba(255,255,255,.08);color:#fff}
+.case-detail--flowpay .case-v1__hero{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);align-items:center;gap:clamp(28px,4.2vw,68px);min-width:0;min-height:0;margin:0;overflow:hidden}
+.case-v1__copy{min-width:0;max-width:680px;padding:8px 0 12px 2.5%}
+.case-v1__photo-placeholder{display:none}
+.case-v1__eyebrow{display:flex;align-items:center;gap:11px;color:#5fe6cc;font-size:10px;font-weight:700;letter-spacing:.2em}.case-v1__eyebrow:after{content:"";width:36px;height:1px;background:rgba(95,230,204,.5)}
+.case-v1__title{margin:25px 0 12px;color:#f2f7f5;font-size:clamp(58px,6.8vw,96px);font-weight:600;letter-spacing:-.075em;line-height:.92}
+.case-v1__subtitle{margin:0 0 12px;color:#f1f5f3;font-size:clamp(18px,1.8vw,24px);font-weight:500;letter-spacing:-.035em;line-height:1.28}
+.case-v1__summary{max-width:54ch;margin:0;color:rgba(225,237,232,.62);font-size:clamp(12px,.95vw,14px);line-height:1.55}
+.case-v1__tabs{display:flex;gap:clamp(16px,3vw,42px);margin-top:clamp(30px,5vh,54px);border-bottom:1px solid rgba(255,255,255,.13)}
+.case-v1__tab{position:relative;min-height:44px;padding:0 0 12px;border:0;background:transparent;color:rgba(225,237,232,.48);font:600 13px/1 var(--font);text-align:left;cursor:pointer;transition:color .2s ease}
+.case-v1__tab:hover,.case-v1__tab.is-active{color:#f1f7f4}.case-v1__tab.is-active:after{position:absolute;right:0;bottom:-1px;left:0;height:2px;background:#5fe6cc;content:""}
+.case-v1__tab-panel{min-height:116px;margin-top:16px;padding:17px 18px;border:1px solid rgba(255,255,255,.11);border-radius:13px;background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.015))}
+.case-v1__panel-label{display:block;margin-bottom:10px;color:#5fe6cc;font-size:9px;font-weight:700;letter-spacing:.15em}.case-v1__tab-panel p{max-width:56ch;margin:0;color:rgba(235,243,239,.72);font-size:clamp(12px,.95vw,14px);line-height:1.58}
+.case-v1__prototype{display:inline-flex;align-items:center;gap:12px;margin-top:18px;color:rgba(244,250,247,.82);font-size:11px;text-decoration:none}.case-v1__prototype span{color:#5fe6cc}.case-v1__prototype:hover{color:#5fe6cc}
+.case-v1__visual{display:grid;grid-template-columns:minmax(0,1fr) clamp(96px,10vw,132px);align-items:center;justify-items:center;gap:clamp(14px,2vw,28px);min-width:0;min-height:0;height:100%;overflow:hidden}
+.case-detail--flowpay .case-hero__media.case-v1__device{position:relative;align-self:center;justify-self:center;display:block;width:auto;height:min(76vh,100%);max-height:100%;aspect-ratio:375/812;min-width:0;min-height:0;padding:7px;overflow:hidden;border:1px solid rgba(174,225,210,.34);border-radius:clamp(28px,3vw,44px);background:linear-gradient(145deg,#15211d,#050908 46%,#111a17);box-shadow:0 24px 90px rgba(0,0,0,.58),0 0 64px rgba(27,173,141,.11)}
+.case-detail--flowpay .case-v1__screen{display:block;width:100%;height:100%;max-height:none;object-fit:contain;object-position:top center;border-radius:clamp(21px,2.4vw,36px);background:#0a1210}
+.case-v1__notch{position:absolute;z-index:2;top:11px;left:50%;width:48px;height:5px;transform:translateX(-50%);border-radius:8px;background:rgba(7,14,12,.78);pointer-events:none}
+.case-v1__screen-label{position:absolute;z-index:3;top:17px;right:14px;padding:6px 8px;border:1px solid rgba(255,255,255,.13);border-radius:20px;background:rgba(7,14,12,.68);color:rgba(236,246,242,.72);font-size:7px;letter-spacing:.12em;pointer-events:none}
+.case-v1__screen-rail{display:grid;grid-auto-rows:minmax(64px,1fr);gap:9px;width:100%;max-height:min(68vh,620px);min-height:0;overflow-y:auto;scrollbar-width:none}.case-v1__screen-rail::-webkit-scrollbar{display:none}
+.case-v1__screen-thumb{position:relative;display:grid;grid-template-columns:31px minmax(0,1fr);grid-template-rows:1fr auto;align-items:center;gap:2px 9px;min-width:0;min-height:64px;padding:7px;border:1px solid rgba(255,255,255,.12);border-radius:11px;background:rgba(255,255,255,.025);color:rgba(240,247,244,.7);text-align:left;cursor:pointer;overflow:hidden;transition:border-color .2s ease,background .2s ease,transform .2s ease}
+.case-v1__screen-thumb:hover{border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.06);transform:translateX(-2px)}.case-v1__screen-thumb.is-active{border-color:#5fe6cc;background:rgba(46,195,161,.1);box-shadow:0 0 0 1px rgba(95,230,204,.12)}
+.case-v1__screen-thumb img{grid-row:1 / span 2;display:block;width:31px;height:52px;object-fit:cover;object-position:top;border:1px solid rgba(255,255,255,.09);border-radius:5px;background:#0a1210}
+.case-v1__screen-thumb span{align-self:end;color:#5fe6cc;font-size:7px;letter-spacing:.12em}.case-v1__screen-thumb b{align-self:start;overflow:hidden;color:rgba(241,247,244,.8);font-size:9px;font-weight:500;line-height:1.2;text-overflow:ellipsis}
+.case-v1__mobile-hint{display:none}
+.case-v1__gallery-close,.case-v1__gallery-trigger{display:none}
+@media (max-width:1050px) and (min-width:761px){.case-detail--flowpay .case-v1__hero{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:20px}.case-v1__copy{padding-left:0}.case-v1__title{font-size:clamp(48px,6vw,72px)}.case-v1__tabs{margin-top:28px}.case-v1__visual{grid-template-columns:minmax(0,1fr) 84px;gap:10px}.case-v1__screen-thumb{grid-template-columns:26px minmax(0,1fr);gap:2px 6px;padding:5px}.case-v1__screen-thumb img{width:26px;height:45px}.case-v1__screen-thumb b{font-size:8px}}
+@media (max-height:740px) and (min-width:761px){.case-detail--flowpay .case-detail__inner.case-v1{grid-template-rows:34px minmax(0,1fr);gap:8px}.case-v1__title{margin:12px 0 7px}.case-v1__tabs{margin-top:22px}.case-v1__tab-panel{min-height:94px;margin-top:11px;padding:13px 15px}.case-v1__prototype{margin-top:12px}.case-detail--flowpay .case-v1__device{height:min(69vh,100%)}.case-v1__screen-rail{max-height:65vh;gap:6px}.case-v1__screen-thumb{min-height:55px}.case-v1__screen-thumb img{height:43px}}
+@media (min-width:761px){
+ .case-detail--flowpay .case-v1__hero{position:relative;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;align-items:stretch}
+ .case-v1__copy{position:relative;z-index:3;width:100%;height:100%;align-self:stretch;display:flex;flex-direction:column;justify-content:center;max-width:none;box-sizing:border-box;padding:clamp(18px,2.2vw,36px) clamp(20px,2vw,32px) clamp(18px,2.2vw,36px) clamp(16px,2.7vw,44px);background:#080c0a}
+ .case-v1__desktop-window{position:absolute;top:0;right:0;bottom:0;left:calc(0px - clamp(24px,2.5vw,48px));display:block;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain;scroll-snap-type:none;scroll-behavior:auto;touch-action:pan-x}
+ .case-v1__desktop-window::-webkit-scrollbar{display:none}
+ .case-v1__desktop-track{position:relative;display:flex;align-items:center;gap:clamp(12px,1.2vw,22px);width:max-content;height:100%;padding:0 2px}
+ .case-v1__desktop-card{position:relative;flex:0 0 auto;width:auto;height:min(78vh,100%);aspect-ratio:375/812;padding:7px;border:1px solid rgba(174,225,210,.24);border-radius:clamp(28px,3vw,44px);background:linear-gradient(145deg,#15211d,#050908 46%,#111a17);box-shadow:0 20px 65px rgba(0,0,0,.46);opacity:.76;cursor:pointer;transition:opacity .22s ease,border-color .22s ease,box-shadow .22s ease}
+ .case-v1__desktop-card:hover{opacity:.94}.case-v1__desktop-card.is-active{z-index:2;border-color:rgba(95,230,204,.58);opacity:1;box-shadow:0 24px 75px rgba(0,0,0,.52),0 0 30px rgba(27,173,141,.09)}
+ .case-v1__desktop-phone{position:relative;display:block;width:100%;height:100%;overflow:hidden;border-radius:clamp(21px,2.4vw,36px);background:#0a1210}
+ .case-v1__desktop-phone img{display:block;width:100%;height:100%;object-fit:contain;object-position:top center;background:#0a1210}
+ .case-v1__desktop-label{position:absolute;top:15px;right:12px;padding:6px 8px;border:1px solid rgba(255,255,255,.13);border-radius:20px;background:rgba(7,14,12,.68);color:rgba(236,246,242,.74);font-size:7px;letter-spacing:.12em;pointer-events:none}
+ .case-detail--flowpay .case-hero__media.case-v1__device,.case-v1__screen-rail{display:none}
+ .case-v1__tab-panel{height:auto;min-height:0;box-sizing:border-box}
+}
+/* Mobile FlowPay: a single-column project overview with a reserved image area. */
+.case-detail--flowpay.case-detail--mobile-flowpay{touch-action:pan-y;padding:12px 20px max(12px,env(safe-area-inset-bottom))}
+body[data-view="mobile"] .case-detail--flowpay.case-detail--mobile-flowpay{padding:12px 20px max(12px,env(safe-area-inset-bottom))}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-detail__inner.case-v1{position:relative;grid-template-rows:36px minmax(0,1fr);gap:12px;overflow:hidden}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__top{position:relative;z-index:2;align-items:center;gap:8px;padding:0 0 6px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__brand{display:none}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-back{min-height:32px;gap:8px;font-size:11px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-back svg{width:16px;height:16px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__counter{display:none}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__hero{position:static;display:block;width:100%;height:100%;min-height:0;overflow:hidden}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__copy{display:flex;flex-direction:column;align-items:stretch;gap:clamp(10px,1.8vh,16px);width:100%;height:100%;max-width:none;max-height:none;min-height:0;overflow:hidden;box-sizing:border-box;padding:0}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__photo-placeholder{position:relative;display:flex;flex:0 0 clamp(124px,23vh,194px);align-items:flex-end;justify-content:flex-start;width:100%;min-height:0;box-sizing:border-box;padding:12px 14px;border:1px dashed rgba(95,230,204,.3);border-radius:16px;background:radial-gradient(ellipse at 78% 15%,rgba(21,113,91,.14),transparent 52%),linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012)),#0a100e;color:rgba(225,237,232,.45)}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__photo-placeholder span{font-size:8px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__identity{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:0 2px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__eyebrow{gap:8px;font-size:8px;letter-spacing:.15em}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__eyebrow:after{width:24px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__title{margin:8px 0 5px;font-size:clamp(38px,10.5vw,44px);line-height:.94}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__subtitle{max-width:34ch;margin:0 0 5px;font-size:clamp(14px,4.1vw,16px);line-height:1.22}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__summary{display:block;max-width:42ch;margin:0;color:rgba(225,237,232,.62);font-size:11px;line-height:1.42}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__details{display:flex;flex:1 1 auto;flex-direction:column;align-items:stretch;min-height:0;width:100%}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tabs{display:flex;justify-content:space-between;gap:8px;margin-top:0}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab{flex:1 1 0;min-width:0;min-height:42px;padding:0 2px 11px;font-size:12px;text-align:center}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel{flex:0 0 auto;height:auto;min-height:144px;box-sizing:border-box;margin-top:12px;padding:14px 14px;border-radius:12px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__panel-label{margin-bottom:8px;font-size:8px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel p{max-width:none;font-size:12px;line-height:1.45}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__prototype{display:inline-flex;align-self:flex-start;min-height:38px;align-items:center;gap:10px;margin-top:8px;padding-top:0;font-size:11px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__visual{display:none!important}
+@media (max-height:700px){
+ .case-detail--flowpay.case-detail--mobile-flowpay{padding-top:8px;padding-bottom:max(8px,env(safe-area-inset-bottom))}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-detail__inner.case-v1{grid-template-rows:32px minmax(0,1fr);gap:8px}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__photo-placeholder{flex-basis:clamp(96px,18vh,128px);padding:9px 11px}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__copy{gap:9px}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__title{margin:5px 0 4px;font-size:34px}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__subtitle{margin-bottom:3px;font-size:13px}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__summary{font-size:9px}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel{min-height:116px;margin-top:8px;padding:10px 11px}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__panel-label{margin-bottom:6px}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel p{font-size:10px;line-height:1.36}
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__prototype{min-height:32px;font-size:10px}
+}
+@media (min-width:761px){
+ body[data-view="mobile"] .case-detail--flowpay.case-detail--mobile-flowpay{left:50%;width:min(calc(100% - 32px),480px);transform:translateX(-50%);padding:20px}
+}
+@media (prefers-reduced-motion:reduce){
+ .case-detail--flowpay.case-detail--mobile-flowpay .case-v1__visual{transition:none!important}
+}
+
+/* FlowPay uses the portfolio's neutral visual language. */
+.case-detail--flowpay{background:#07070b;color:#fafaff}
+.case-detail--flowpay .case-v1__copy{background:#07070b}
+.case-detail--flowpay .case-v1__eyebrow,.case-detail--flowpay .case-v1__panel-label,.case-detail--flowpay .case-v1__prototype span,.case-detail--flowpay .case-v1__counter #caseScreenIndex{color:rgba(250,250,255,.65)}
+.case-detail--flowpay .case-v1__eyebrow:after{background:rgba(255,255,255,.3)}
+.case-detail--flowpay .case-v1__tab.is-active:after{background:#fafaff}
+.case-detail--flowpay .case-v1__desktop-card.is-active{border-color:rgba(255,255,255,.5);box-shadow:0 24px 75px rgba(0,0,0,.52)}
+.case-detail--flowpay .case-v1__desktop-card{background:#0a0a10;border-color:rgba(255,255,255,.2)}
+.case-detail--flowpay .case-v1__screen-thumb.is-active{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.06)}
+.case-detail--flowpay .case-v1__screen-thumb span{color:rgba(255,255,255,.7)}
+.case-photo-expand svg,.case-v1__prototype svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+.flow-gallery[hidden]{display:none!important}
+.flow-gallery{position:absolute;inset:0;z-index:100;display:flex;flex-direction:column;gap:12px;padding:16px 20px max(16px,env(safe-area-inset-bottom));background:#07070b;color:#fafaff}
+.flow-gallery__bar,.flow-gallery__controls{display:flex;align-items:center;justify-content:space-between;flex:none;gap:12px}
+.flow-gallery__bar{font-size:12px;color:rgba(255,255,255,.65)}
+.flow-gallery button{min-width:44px;min-height:44px;border:1px solid rgba(255,255,255,.2);border-radius:12px;background:#101016;color:#fafaff;font:500 14px var(--font);cursor:pointer}
+.flow-gallery__viewport{min-height:0;flex:1;overflow:auto;display:flex;overscroll-behavior:contain;touch-action:pan-x pan-y pinch-zoom}
+.flow-gallery__viewport img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;margin:auto;border-radius:14px}
+.flow-gallery__viewport.is-zoomed img{max-width:none;max-height:none;width:200%;height:auto;object-fit:contain;margin:0 auto}
+.flow-gallery__controls button:nth-child(2){flex:1}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__copy{gap:clamp(8px,1.5vh,14px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__photo-placeholder{position:relative;display:flex;flex:1 1 160px;min-height:110px;max-height:240px;align-items:center;justify-content:center;padding:0;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:#0a0a10;overflow:hidden;cursor:zoom-in}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__photo-placeholder img{width:100%;height:100%;object-fit:contain}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-photo-expand{position:absolute;right:10px;bottom:10px;display:grid;place-items:center;width:32px;height:32px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(7,7,11,.8);color:#fff;font-size:15px;letter-spacing:0}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__eyebrow{color:rgba(250,250,255,.56)}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__summary{color:rgba(250,250,255,.6)}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel{height:144px;min-height:144px;overflow:auto;background:rgba(255,255,255,.03)}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__prototype{align-self:stretch;display:flex;justify-content:space-between;min-height:48px;flex:none;margin-top:auto;padding:0 16px;border:1px solid rgba(255,255,255,.2);border-radius:12px;background:rgba(255,255,255,.06);font-size:13px;color:#fafaff}
+@media(max-height:700px){.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__photo-placeholder{flex:0 0 110px}.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel{height:116px;min-height:116px}.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__prototype{min-height:44px}}
+
+
+/* One project cover on desktop; the same image opens on mobile. */
+.case-detail--flowpay .case-v1__counter{visibility:hidden}
+.case-v1__cover{display:none}
+@media (min-width:761px){
+ .case-detail--flowpay:not(.case-detail--mobile-flowpay) .case-v1__hero{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(24px,3vw,48px)}
+ .case-detail--flowpay:not(.case-detail--mobile-flowpay) .case-v1__visual{display:flex;align-items:center;justify-content:center;overflow:hidden}
+ .case-detail--flowpay:not(.case-detail--mobile-flowpay) .case-v1__desktop-window{display:none}
+ .case-detail--flowpay:not(.case-detail--mobile-flowpay) .case-v1__cover{display:flex;align-items:center;justify-content:center;width:100%;max-height:100%;aspect-ratio:1.35;border:1px solid rgba(255,255,255,.14);border-radius:clamp(22px,2.4vw,36px);background:#0a0a10;overflow:hidden}
+ .case-v1__cover img{width:100%;height:100%;object-fit:contain}
+}
+.case-detail--flowpay .case-v1__prototype{display:flex;align-items:center;justify-content:space-between;gap:16px;width:min(100%,340px);min-height:56px;padding:6px 7px 6px 20px;border:1px solid rgba(255,255,255,.2);border-radius:24px;background:rgba(255,255,255,.06);color:#fafaff;font-size:13px}
+.case-detail--flowpay .case-v1__prototype span{display:grid;place-items:center;flex:none;width:42px;height:42px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(255,255,255,.10);color:#fafaff}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__prototype{width:100%;min-height:54px;padding:5px 6px 5px 18px;border-radius:22px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__prototype span{width:40px;height:40px}
+.flow-gallery__controls{justify-content:center}
+.flow-gallery__controls #flowGalleryZoom{min-width:150px;padding:0 20px;border-radius:100px}
+.flow-gallery__bar button{width:44px;height:44px;border-radius:50%}
+
+
+/* Compact vertical project list in the mobile category view. */
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-area{display:block;min-height:0;overflow:hidden}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid{display:flex;flex-direction:column;gap:12px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;scrollbar-width:none;padding:2px 0 12px;cursor:auto}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid::-webkit-scrollbar{display:none}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card[data-slot]{position:relative!important;top:auto;left:auto;display:grid;grid-template-columns:40% minmax(0,1fr);align-items:stretch;flex:0 0 132px;width:100%;height:132px;min-height:132px;max-height:none;margin:0;padding:0;transform:none;opacity:1;filter:none;visibility:visible;pointer-events:auto;box-shadow:none;border:1px solid rgba(255,255,255,.14);border-radius:20px;background:#0a0a10;transition:none;will-change:auto}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card::before{display:none}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__image{position:relative;inset:auto;grid-column:1;grid-row:1;width:100%;height:100%;border-radius:0;background:#101016}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__image img{object-fit:cover}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card--logos .work-card__image img,body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card--posters .work-card__image img{object-fit:contain}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__top{position:absolute;top:12px;left:calc(40% + 14px);right:12px;display:flex;gap:4px}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__type,body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__number{min-height:0;padding:0;border:0;background:none;color:rgba(255,255,255,.5);font-size:8px}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__copy{position:relative;inset:auto;grid-column:2;grid-row:1;display:flex;justify-content:center;align-self:stretch;gap:6px;padding:30px 14px 12px;opacity:1;min-width:0}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__title{font-size:clamp(16px,4.2vw,19px);line-height:1.1;letter-spacing:-.03em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__subtitle{font-size:10px;line-height:1.3;color:rgba(255,255,255,.65);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+body[data-view="mobile"][data-screen="section"][data-section-id] .carousel-indicators{display:none!important}
+
+
+/* Mobile project cards: image above the concise project description. */
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card[data-slot]{display:flex;flex-direction:column;flex:0 0 auto;height:auto;min-height:0;border-radius:20px;overflow:hidden}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__image{display:block;flex:none;width:100%;height:auto;aspect-ratio:1.6;background:#09090c}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__image img{width:100%;height:100%;object-fit:contain}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__top{position:static;display:flex;justify-content:space-between;order:1;padding:12px 14px 0}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__copy{position:static;display:flex;flex:none;order:2;align-self:stretch;gap:4px;padding:6px 14px 14px;text-align:left}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__title{font-size:16px;line-height:1.2}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid .work-card .work-card__subtitle{font-size:11px;line-height:1.35}
+/* Desktop case: text follows the tabs directly. */
+@media(min-width:761px){
+ .case-detail--flowpay:not(.case-detail--mobile-flowpay) .case-v1__tab-panel{margin-top:16px;padding:0;border:0;border-radius:0;background:none}
+ .case-detail--flowpay:not(.case-detail--mobile-flowpay) .case-v1__panel-label{display:none}
+ .case-detail--flowpay:not(.case-detail--mobile-flowpay) .case-v1__cover{height:var(--case-cover-height,auto);aspect-ratio:auto}
+}
+
+
+/* Clear mobile case copy and subtle interaction on the project link. */
+.case-detail--flowpay .case-v1__prototype span{transition:background .25s ease,border-color .25s ease}
+.case-detail--flowpay .case-v1__prototype span svg{transition:transform .35s var(--ease)}
+@media (hover:hover){
+ .case-detail--flowpay .case-v1__prototype:hover span{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.46)}
+ .case-detail--flowpay .case-v1__prototype:hover span svg{transform:rotate(45deg)}
+}
+.case-detail--flowpay .case-v1__prototype:focus-visible{outline:2px solid rgba(255,255,255,.85);outline-offset:3px}
+.case-detail--flowpay .case-v1__prototype:focus-visible span{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.46)}
+.case-detail--flowpay .case-v1__prototype:focus-visible span svg{transform:rotate(45deg)}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel{height:120px;min-height:120px;margin-top:12px;padding:0;border:0;border-radius:0;background:transparent;overflow:auto}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__panel-label{display:none}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel p{font-size:12px;line-height:1.45}
+@media(max-height:700px){.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel{height:100px;min-height:100px;margin-top:10px}.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__tab-panel p{font-size:11px;line-height:1.4}}
+body[data-view="mobile"][data-screen="section"][data-section-id] .work-grid{-webkit-overflow-scrolling:touch;scroll-behavior:auto;mask-image:linear-gradient(to bottom,transparent 0,#000 18px,#000 calc(100% - 24px),transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18px,#000 calc(100% - 24px),transparent 100%);padding-top:18px;padding-bottom:24px}
+@media(prefers-reduced-motion:reduce){.case-detail--flowpay .case-v1__prototype span,.case-detail--flowpay .case-v1__prototype span svg{transition:none}}
+
+
+/* Fill the phone preview and keep project links in the shared case layout. */
+@media(min-width:761px){body[data-view="mobile"] .case-detail--flowpay.case-detail--mobile-flowpay{left:0;right:0;width:100%;transform:none}}
+.case-v1__other-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.case-v1__other-links:empty{display:none}
+.case-v1__other-links a{color:rgba(250,250,255,.68);font-size:11px;text-decoration:none}
+.case-v1__other-links a:hover,.case-v1__other-links a:focus-visible{color:#fff;text-decoration:underline}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__other-links{margin-top:8px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__title{overflow-wrap:anywhere}
+
+
+/* Art gallery and case views, matching the portfolio's neutral frame. */
+.case-detail--art{background:#07070b;color:#fafaff;overflow:auto;padding:clamp(16px,2vw,28px)}
+.art-case{min-height:100%;max-width:1560px;margin:auto;display:flex;flex-direction:column;gap:24px}
+.art-case__top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:10px;color:rgba(255,255,255,.45);font-size:9px;letter-spacing:.14em}
+.art-case__top .case-back{display:flex;align-items:center;gap:10px;min-height:36px;padding:0;border:0;background:transparent;color:#fafaff;font:500 12px var(--font);cursor:pointer}
+.art-case__top svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+.art-case__main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);align-items:center;gap:clamp(24px,4vw,60px)}
+.art-case__copy h1{margin:18px 0;font-size:clamp(36px,4.6vw,68px);line-height:1;letter-spacing:-.055em}
+.art-case__copy p{max-width:55ch;margin:0;color:rgba(250,250,255,.72);font-size:clamp(13px,1.1vw,16px);line-height:1.6}
+.art-case__eyebrow{font-size:10px;letter-spacing:.16em;color:rgba(250,250,255,.5)}
+.art-case__image{display:flex;align-items:center;justify-content:center;min-width:0;max-height:75vh;overflow:hidden;border-radius:clamp(20px,2.4vw,36px);border:1px solid rgba(255,255,255,.14);background:#0a0a10}
+.art-case__image img{display:block;width:100%;max-height:75vh;object-fit:contain}
+body[data-view="mobile"] .case-detail--art{left:0;right:0;width:100%;transform:none;padding:16px 20px max(20px,env(safe-area-inset-bottom))}
+body[data-view="mobile"] .art-case{gap:16px}
+body[data-view="mobile"] .art-case__main{display:flex;flex-direction:column-reverse;align-items:stretch;justify-content:flex-end;gap:18px}
+body[data-view="mobile"] .art-case__image{max-height:none;flex:none;border-radius:20px}
+body[data-view="mobile"] .art-case__image img{max-height:min(57vh,480px);object-fit:contain}
+body[data-view="mobile"] .art-case__copy h1{font-size:32px;margin:10px 0}
+body[data-view="mobile"] .art-case__copy p{font-size:13px;line-height:1.5}
+body[data-view="mobile"][data-screen="section"][data-section-id="art"] .work-grid .work-card.work-card--artwork .work-card__image img{object-fit:cover;object-position:center top}
+.case-v1__actions{display:flex;gap:10px;align-items:stretch;margin-top:18px}
+.case-detail--flowpay .case-v1__actions .case-v1__prototype{flex:1;width:auto;min-width:0;margin:0}
+.case-detail--flowpay .case-v1__actions .case-v1__video{background:transparent}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__actions{margin-top:auto;padding-top:8px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__actions .case-v1__prototype{padding-left:12px;font-size:11px}
+.case-detail--flowpay.case-detail--mobile-flowpay .case-v1__actions .case-v1__prototype span{width:34px;height:34px}
+
+
+/* Web update notice with the same animated nebula as the home screen. */
+.web-update[hidden]{display:none!important}
+.web-update{position:absolute;inset:0;z-index:5;display:grid;place-items:center;padding:0}
+.web-update__card{position:relative;display:flex;align-items:flex-end;width:100%;height:100%;min-height:0;padding:clamp(24px,4vw,54px);overflow:hidden;border:1px solid rgba(255,255,255,.22);border-radius:clamp(22px,2.4vw,36px);background:#101016;isolation:isolate}
+.web-update__nebula{position:absolute;inset:0;width:100%;height:100%;z-index:-2;filter:grayscale(1) brightness(.62)}
+.web-update__card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(7,7,11,.9),rgba(7,7,11,.15) 80%)}
+.web-update__content span{color:rgba(255,255,255,.6);font-size:10px;font-weight:600;letter-spacing:.16em}
+.web-update__content h2{margin:12px 0 8px;color:#fafaff;font-size:clamp(30px,4vw,56px);letter-spacing:-.055em;line-height:1.05}
+.web-update__content p{margin:0;color:rgba(255,255,255,.7);font-size:clamp(13px,1.3vw,16px);line-height:1.45}
+body:is([data-section-id="dev"],[data-section-id="games"])[data-screen="section"] .work-grid,body:is([data-section-id="dev"],[data-section-id="games"])[data-screen="section"] .carousel-indicators,body:is([data-section-id="dev"],[data-section-id="games"])[data-screen="section"] .work-count{display:none!important}
+body[data-view="mobile"][data-screen="section"]:is([data-section-id="dev"],[data-section-id="games"]) .web-update{padding:0}
+body[data-view="mobile"][data-screen="section"]:is([data-section-id="dev"],[data-section-id="games"]) .web-update__card{width:100%;height:100%;min-height:0;max-height:none;padding:24px;border-radius:22px}
+body[data-view="mobile"] .case-detail--art .art-case__image{height:min(52vh,460px);min-height:0}
+body[data-view="mobile"] .case-detail--art .art-case__image img{height:100%;max-height:none}
+body[data-view="mobile"][data-screen="section"][data-section-id="art"] .work-grid .work-card.work-card--artwork .work-card__image{aspect-ratio:9/8}
+
+
+/* Art frames follow the proportions of the artwork, without empty bars. */
+.case-detail--art .art-case__image{
+  width:min(100%, calc(75vh * 1672 / 941));
+  height:auto;
+  max-height:none;
+  aspect-ratio:1672 / 941;
+  justify-self:center;
+}
+.case-detail--art .art-case__image img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:none;
+  object-fit:contain;
+}
+body[data-view="mobile"] .case-detail--art .art-case__image{
+  width:100%;
+  height:auto;
+  max-height:none;
+  aspect-ratio:auto;
+}
+body[data-view="mobile"] .case-detail--art .art-case__image img{
+  width:100%;
+  height:auto;
+  max-height:none;
+}
+
+/* Desktop artwork and copy sit side by side with clear separation. */
+body[data-view="desktop"] .case-detail--art .art-case__main{
+  gap:clamp(32px,5vw,80px);
+}
+body[data-view="desktop"] .case-detail--art .art-case__copy{min-width:0}
+
+/* Keep mobile artwork full-width and allow scrolling without a visible scrollbar. */
+body[data-view="mobile"] .case-detail--art{
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+body[data-view="mobile"] .case-detail--art::-webkit-scrollbar{display:none}
+body[data-view="mobile"] .case-detail--art .art-case__image{
+  width:100%;
+  height:auto;
+  max-height:none;
+  aspect-ratio:auto;
+}
+body[data-view="mobile"] .case-detail--art .art-case__image img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+}
+
+/* Balance the desktop columns and leave room for mobile case copy. */
+body[data-view="desktop"] .case-detail--art .art-case__main{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(40px,5vw,80px);
+}
+body[data-view="desktop"] .case-detail--art .art-case__copy h1{
+  overflow-wrap:anywhere;
+}
+body[data-view="mobile"] .case-detail--art .art-case__image{
+  height:clamp(180px,38vh,340px);
+  overflow:hidden;
+}
+body[data-view="mobile"] .case-detail--art .art-case__image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 35%;
+}
+
+/* Give the artwork more of the desktop canvas while retaining a clear gap. */
+body[data-view="desktop"] .case-detail--art .art-case__main{
+  grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+  gap:clamp(24px,3vw,48px);
+}
+body[data-view="desktop"] .case-detail--art .art-case__copy h1{
+  font-size:clamp(36px,4vw,60px);
+}
+/* Use the available height above the copy, keeping the top of the artwork. */
+body[data-view="mobile"] .case-detail--art .art-case__image{
+  height:clamp(220px,calc(100vh - 320px),480px);
+}
+body[data-view="mobile"] .case-detail--art .art-case__image img{
+  object-position:center top;
+}
+
+body[data-view="mobile"] .case-detail--art .art-case{
+  height:100%;
+  min-height:0;
+}
+body[data-view="mobile"] .case-detail--art .art-case__main{
+  flex:1 1 0;
+  min-height:0;
+}
+body[data-view="mobile"] .case-detail--art .art-case__copy{flex:none}
+body[data-view="mobile"] .case-detail--art .art-case__image{
+  flex:1 1 0;
+  min-height:0;
+  height:0;
+}
+body[data-view="mobile"] .case-detail--art .art-case__image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+
+/* Compact placeholder typography on narrow screens. */
+body[data-view="mobile"] .web-update__content{min-width:0;max-width:100%}
+body[data-view="mobile"] .web-update__content h2{font-size:clamp(20px,6vw,26px);line-height:1.12;overflow-wrap:anywhere}

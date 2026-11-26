@@ -1,0 +1,48 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --font: 'Space Grotesk', sans-serif;
+  --bg: #07070b;
+  --text: #fafaff;
+  --bar: 96px;
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* Untitled UI Spacing System */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  
+  /* Layout outer padding */
+  --outer-pad: var(--space-6); /* 24px для ПК */
+  --gap: var(--space-4);
+}
+
+/* Мобильные отступы: 12px */
+body[data-view="mobile"], body.is-real-mobile { 
+  --outer-pad: var(--space-3); 
+  --gap: var(--space-3);
+}
+
+body.is-real-mobile { 
+  --bar: 86px; 
+}
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-user-select: none; user-select: none;
+}
