@@ -29,6 +29,7 @@ ptsEl.addEventListener('input', () => {
   resizeFx();
 });
 function frame(now) {
+  requestAnimationFrame(frame);
   const dt = Math.min(0.05, (now - last) / 1000);
   last = now;
   fpsFrames += 1;
@@ -41,7 +42,6 @@ function frame(now) {
   const mobile = body.classList.contains('is-real-mobile');
   // Limit GPU work on phones while retaining continuous animation timing.
   if (document.hidden || (mobile && now - lastMobileDraw < 33)) {
-    requestAnimationFrame(frame);
     return;
   }
   if (mobile) lastMobileDraw = now;
@@ -52,8 +52,8 @@ function frame(now) {
   fx.forEach(o => {
     const gl = o.gl;
     if (!gl || !o.prog || !o.card.offsetWidth || !o.card.offsetHeight) return;
-    // Home canvases retain dimensions when hidden; avoid rendering behind other screens.
-    if (o.card.classList.contains('card') && body.dataset.screen) return;
+    if (gl.isContextLost()) return;
+    try {
     gl.useProgram(o.prog.prog);
     const u = o.prog.u;
     const cw = o.card.offsetWidth, ch = o.card.offsetHeight;
@@ -72,8 +72,11 @@ function frame(now) {
     gl.enableVertexAttribArray(0);
     gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    } catch (error) {
+      // A reclaimed graphics context must not stop animation of the other cards.
+      console.warn('Nebula rendering paused:', error);
+    }
   });
-  requestAnimationFrame(frame);
 }
 resizeFx();
 requestAnimationFrame(frame);
