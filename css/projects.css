@@ -393,31 +393,26 @@ a, button, [role="button"], input, select, textarea { -webkit-tap-highlight-colo
 ::view-transition-old(root), ::view-transition-new(root){animation-duration:360ms;animation-timing-function:ease-in-out}
 @media (prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation-duration:0s}}
 
-/* Mobile back navigation: one button enclosing the icon and its label. */
-body[data-view="mobile"][data-screen="section"] .portfolio-side__top{min-height:46px}
+/* Quiet mobile navigation: a plain arrow and label. */
+body[data-view="mobile"][data-screen="section"] .portfolio-side__top{min-height:32px}
 body[data-view="mobile"][data-screen="section"] #sectionBack,
 body[data-view="mobile"] .case-detail #caseBack,
 body[data-view="mobile"] .case-detail #caseBack:hover{
-  display:inline-flex;flex:0 0 auto;align-items:center;justify-content:flex-start;
-  gap:10px;width:max-content;max-width:100%;height:46px;min-width:0;min-height:46px;
-  margin:0;padding:5px 15px 5px 5px;box-sizing:border-box;
-  border:1px solid rgba(255,255,255,.2);border-radius:24px;
-  background:transparent;color:#fafaff;line-height:1;transform:none;touch-action:manipulation;
+  display:inline-flex;flex:0 0 auto;align-items:center;justify-content:flex-start;gap:9px;
+  width:auto;max-width:100%;height:auto;min-width:0;min-height:32px;margin:0;padding:0;
+  border:0;border-radius:0;background:transparent;color:#fafaff;line-height:1;
+  transform:none;touch-action:manipulation;
 }
 body[data-view="mobile"][data-screen="section"] #sectionBack > svg,
 body[data-view="mobile"] .case-detail #caseBack > svg{
-  display:block;flex:0 0 34px;width:34px;height:34px;box-sizing:border-box;padding:8px;
-  border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(255,255,255,.1);
-  fill:none;stroke:currentColor;stroke-width:1.8;transition:transform .35s ease,background .35s ease;
+  display:block;flex:0 0 16px;width:16px;height:16px;padding:0;border:0;border-radius:0;
+  background:transparent;fill:none;stroke:currentColor;stroke-width:1.8;
 }
 body[data-view="mobile"][data-screen="section"] #sectionBack .mobile-category-breadcrumb{
   display:inline-flex;position:static;flex:none;align-items:center;gap:7px;min-height:0;
   padding:0;border:0;background:none;white-space:nowrap;color:rgba(255,255,255,.72);
 }
 body[data-view="mobile"] .case-detail #caseBack > span{display:inline;white-space:nowrap}
-body[data-view="mobile"][data-screen="section"] #sectionBack:active > svg,
-body[data-view="mobile"] .case-detail #caseBack:active > svg{transform:rotate(-45deg);background:rgba(255,255,255,.25)}
 body[data-view="mobile"] .case-detail #caseBack:focus-visible{outline:2px solid #fff;outline-offset:3px}
 body[data-view="mobile"] .case-v1__prototype,body[data-view="mobile"] .case-v1__tab{touch-action:manipulation}
-body[data-view="mobile"] .case-detail--flowpay.case-detail--mobile-flowpay .case-detail__inner.case-v1{grid-template-rows:54px minmax(0,1fr)}
-@media(prefers-reduced-motion:reduce){body[data-view="mobile"] #sectionBack > svg,body[data-view="mobile"] .case-detail #caseBack > svg{transition:none}}
+body[data-view="mobile"] .case-detail--flowpay.case-detail--mobile-flowpay .case-detail__inner.case-v1{grid-template-rows:38px minmax(0,1fr)}
