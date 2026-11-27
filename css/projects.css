@@ -424,7 +424,8 @@ body[data-screen="section"][data-section-id="dev"] .carousel-indicators{display:
 /* Play: same case-v1 layout as Web / UX/UI. Only the media is interactive. */
 .case-detail--soundfield .case-v1__cover{position:relative;isolation:isolate}
 .case-detail--soundfield .case-v1__visual{flex-direction:column;justify-content:center;gap:12px}
-.case-detail--soundfield .case-v1__cover{aspect-ratio:1.35;height:auto;min-height:0}
+.case-detail--flowpay.case-detail--soundfield:not(.case-detail--mobile-flowpay) .case-v1__cover{width:100%;aspect-ratio:1.35;height:auto;min-height:0;max-height:calc(100% - 36px);flex:none}
+body[data-view="mobile"] .case-detail--flowpay.case-detail--soundfield:not(.case-detail--mobile-flowpay) .case-v1__cover{max-height:none;aspect-ratio:1.35;height:auto;flex:none}
 .case-detail--soundfield .soundfield-frame iframe{display:block;width:100%;height:100%;position:absolute;inset:0;border:0}
 .case-detail--soundfield .soundfield-launch{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;width:100%;height:100%;padding:16px;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
 .case-detail--soundfield .soundfield-launch img{width:min(28%,140px);height:auto;aspect-ratio:1;object-fit:contain}
