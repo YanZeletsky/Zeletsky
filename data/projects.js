@@ -194,8 +194,8 @@ const SOUNDFIELD = {
   title:"Soundfield",
   type:"Creative coding · 2D / 3D · интерактив",
   details:"JavaScript · Three.js · WebGL · Audio",
-  description:"Интерактивное звуковое поле с несколькими режимами сцены. Проект объединяет генеративную графику, 2D- и 3D-пространство и управление визуальной средой.",
+  description:"Soundfield — интерактивное пространство для экспериментов со звуком, цветом и движением. Здесь можно взаимодействовать с полем частиц, менять визуальные эффекты, палитры и переключаться между 2D и 3D. Проект предлагает не заданный сценарий, а свободу исследования цифровой среды.",
   image:"magicfield:icon-512.png",
   gallery:[],
-  links:[{label:"Открыть Soundfield →",url:"https://github.com/YanZeletsky/Magicfield"}]
+  links:[{label:"Открыть проект →",url:"https://yanzeletsky.github.io/Magicfield/"}]
 };

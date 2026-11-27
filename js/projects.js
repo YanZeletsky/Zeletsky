@@ -313,9 +313,53 @@ function openArtCase(id, trigger, artwork) {
   document.getElementById("caseBack").focus();
 }
 
+
+/* Play: an isolated, user-activated live preview of the original project. */
+function openSoundfieldCase(id, trigger, project) {
+  projectReturn = trigger || document.activeElement;
+  caseDetail.onpointerdown = caseDetail.onpointerup = caseDetail.onpointercancel = null;
+  caseDetail.classList.remove("case-detail--flowpay", "case-detail--mobile-flowpay", "case-detail--art");
+  caseDetail.classList.add("case-detail--soundfield");
+  caseDetail.dataset.caseId = id;
+  const url = project.links[0].url;
+  const preview = getPreview(id);
+  caseDetail.innerHTML = '<div class="soundfield-case">' +
+    '<header class="soundfield-case__top"><button class="case-back" type="button" id="caseBack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17 7 7M7 16V7h9"/></svg><span>Play</span></button><span class="case-v1__brand">SELECTED PROJECT · SOUNDFIELD</span></header>' +
+    '<main class="soundfield-case__main"><section class="soundfield-case__copy"><span class="case-v1__eyebrow">PLAY · CREATIVE CODING</span><h1 class="case-v1__title">Soundfield</h1><p class="case-v1__subtitle">Пространство звука, цвета и движения.</p><p class="soundfield-case__description">' + escapeHTML(project.description) + '</p><a class="soundfield-case__link" href="' + escapeHTML(url) + '" target="_blank" rel="noopener noreferrer">Открыть проект <span aria-hidden="true">↗</span></a></section>' +
+    '<section class="soundfield-case__demo" aria-label="Интерактивное превью"><div class="soundfield-case__frame" id="soundfieldFrame"><button class="soundfield-case__launch" id="soundfieldLaunch" type="button"><img src="' + escapeHTML(preview) + '" alt=""><span>Попробовать Soundfield <span aria-hidden="true">↗</span></span></button></div><div class="soundfield-case__footer"><span>Интерактивное превью · 2D / 3D</span><button type="button" id="soundfieldStop" hidden>Остановить</button></div></section></main></div>';
+  body.dataset.screen = "project";
+  sectionEl.inert = true;
+  caseDetail.setAttribute("aria-hidden", "false");
+  caseDetail.scrollTop = 0;
+  const frame = document.getElementById("soundfieldFrame");
+  const launch = document.getElementById("soundfieldLaunch");
+  const stop = document.getElementById("soundfieldStop");
+  launch.addEventListener("click", function() {
+    if (frame.querySelector("iframe")) return;
+    const iframe = document.createElement("iframe");
+    iframe.title = "Интерактивное приложение Soundfield";
+    iframe.allow = "fullscreen; autoplay";
+    iframe.allowFullscreen = true;
+    iframe.src = url;
+    launch.hidden = true;
+    frame.appendChild(iframe);
+    stop.hidden = false;
+  });
+  stop.addEventListener("click", function() {
+    const iframe = frame.querySelector("iframe");
+    if (iframe) iframe.remove();
+    launch.hidden = false;
+    stop.hidden = true;
+    launch.focus();
+  });
+  document.getElementById("caseBack").addEventListener("click", closeProject);
+  document.getElementById("caseBack").focus();
+}
+
 function openProjectInstant(id, trigger) {
   const p = getProject(id);
   if (!p) return;
+  if (String(id) === "soundfield") { openSoundfieldCase(id, trigger, p); return; }
   if (ART_WORKS[String(id)]) { openArtCase(id, trigger, p); return; }
   if (CASE_SUMMARIES[String(id)]) { openFlowPayCase(id, trigger, p); return; }
   caseDetail.onpointerdown = null;
@@ -389,6 +433,11 @@ function closeLightboxFlow(lightbox) {
   });
 }
 function closeProjectInstant() {
+  if (caseDetail.classList.contains("case-detail--soundfield")) {
+    caseDetail.replaceChildren();
+    caseDetail.classList.remove("case-detail--soundfield");
+    delete caseDetail.dataset.caseId;
+  }
   body.dataset.screen = "section";
   sectionEl.inert = false;
   caseDetail.setAttribute("aria-hidden","true");

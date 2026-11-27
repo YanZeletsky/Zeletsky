@@ -144,16 +144,7 @@ function moveCarousel(direction) {
 }
 function renderWorkGrid() {
   const placeholder = document.getElementById("webUpdate");
-  const isUpdating = activeSection === "games";
-  placeholder.hidden = !isUpdating;
-  if (isUpdating) {
-    placeholder.querySelector(".web-update__content span").textContent = (activeSection === "games" ? "PLAY" : "WEB") + " · ПОРТФОЛИО";
-    workGrid.innerHTML = "";
-    carouselIndicators.innerHTML = "";
-    workCount.textContent = "";
-    requestAnimationFrame(resizeFx);
-    return;
-  }
+  placeholder.hidden = true;
   const ids = getVisibleIds();
   workGrid.dataset.filter = activeFilter;
   workGrid.dataset.section = activeSection;
