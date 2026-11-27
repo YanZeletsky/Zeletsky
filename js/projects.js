@@ -319,14 +319,14 @@ function openSoundfieldCase(id, trigger, project) {
   projectReturn = trigger || document.activeElement;
   caseDetail.onpointerdown = caseDetail.onpointerup = caseDetail.onpointercancel = null;
   caseDetail.classList.remove("case-detail--flowpay", "case-detail--mobile-flowpay", "case-detail--art");
-  caseDetail.classList.add("case-detail--soundfield");
+  caseDetail.classList.add("case-detail--flowpay", "case-detail--soundfield");
   caseDetail.dataset.caseId = id;
   const url = project.links[0].url;
   const preview = getPreview(id);
-  caseDetail.innerHTML = '<div class="soundfield-case">' +
-    '<header class="soundfield-case__top"><button class="case-back" type="button" id="caseBack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17 7 7M7 16V7h9"/></svg><span>Play</span></button><span class="case-v1__brand">SELECTED PROJECT · SOUNDFIELD</span></header>' +
-    '<main class="soundfield-case__main"><section class="soundfield-case__copy"><span class="case-v1__eyebrow">PLAY · CREATIVE CODING</span><h1 class="case-v1__title">Soundfield</h1><p class="case-v1__subtitle">Пространство звука, цвета и движения.</p><p class="soundfield-case__description">' + escapeHTML(project.description) + '</p><a class="soundfield-case__link" href="' + escapeHTML(url) + '" target="_blank" rel="noopener noreferrer">Открыть проект <span aria-hidden="true">↗</span></a></section>' +
-    '<section class="soundfield-case__demo" aria-label="Интерактивное превью"><div class="soundfield-case__frame" id="soundfieldFrame"><button class="soundfield-case__launch" id="soundfieldLaunch" type="button"><img src="' + escapeHTML(preview) + '" alt=""><span>Попробовать Soundfield <span aria-hidden="true">↗</span></span></button></div><div class="soundfield-case__footer"><span>Интерактивное превью · 2D / 3D</span><button type="button" id="soundfieldStop" hidden>Остановить</button></div></section></main></div>';
+  caseDetail.innerHTML = '<div class="case-detail__inner case-v1">' +
+    '<header class="case-v1__top"><button class="case-back" type="button" id="caseBack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17 7 7M7 16V7h9"/></svg><span>Play</span></button><span class="case-v1__brand">SELECTED PROJECT · SOUNDFIELD</span><div class="case-v1__counter" aria-hidden="true"></div></header>' +
+    '<main class="case-v1__hero"><section class="case-v1__copy"><div class="case-v1__identity"><span class="case-v1__eyebrow">PLAY · CREATIVE CODING</span><h1 class="case-v1__title">Soundfield</h1><p class="case-v1__subtitle">Пространство звука, цвета и движения.</p><p class="case-v1__summary">' + escapeHTML(project.description) + '</p></div><div class="case-v1__details"><div class="case-v1__actions"><a class="case-v1__prototype" href="' + escapeHTML(url) + '" target="_blank" rel="noopener noreferrer">Открыть проект <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></div></div></section>' +
+    '<section class="case-v1__visual" aria-label="Интерактивное превью"><div class="case-v1__cover soundfield-frame" id="soundfieldFrame"><button class="soundfield-launch" id="soundfieldLaunch" type="button"><img src="' + escapeHTML(preview) + '" alt=""><span>Попробовать Soundfield</span></button></div><div class="soundfield-footer"><span>Интерактивное превью · 2D / 3D</span><button type="button" id="soundfieldStop" hidden>Остановить</button></div></section></main></div>';
   body.dataset.screen = "project";
   sectionEl.inert = true;
   caseDetail.setAttribute("aria-hidden", "false");
@@ -435,7 +435,7 @@ function closeLightboxFlow(lightbox) {
 function closeProjectInstant() {
   if (caseDetail.classList.contains("case-detail--soundfield")) {
     caseDetail.replaceChildren();
-    caseDetail.classList.remove("case-detail--soundfield");
+    caseDetail.classList.remove("case-detail--soundfield", "case-detail--flowpay", "case-detail--mobile-flowpay");
     delete caseDetail.dataset.caseId;
   }
   body.dataset.screen = "section";

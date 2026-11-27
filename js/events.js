@@ -92,7 +92,7 @@ function setView(view, replay) {
     const img = document.getElementById("artCaseImage");
     if (item && img) img.src = view === "mobile" ? item.mobile : item.desktop;
   }
-  if (body.dataset.screen === "project" && caseDetail.classList.contains("case-detail--flowpay")) {
+  if (body.dataset.screen === "project" && caseDetail.classList.contains("case-detail--flowpay") && !caseDetail.classList.contains("case-detail--soundfield")) {
     syncFlowPayMobileLayout(true);
     window.dispatchEvent(new Event("resize"));
   }

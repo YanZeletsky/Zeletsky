@@ -245,7 +245,7 @@ body[data-view="mobile"][data-screen="section"][data-section-id="art"] .work-gri
 .web-update__content span{color:rgba(255,255,255,.6);font-size:10px;font-weight:600;letter-spacing:.16em}
 .web-update__content h2{margin:12px 0 8px;color:#fafaff;font-size:clamp(30px,4vw,56px);letter-spacing:-.055em;line-height:1.05}
 .web-update__content p{margin:0;color:rgba(255,255,255,.7);font-size:clamp(13px,1.3vw,16px);line-height:1.45}
-body[data-section-id="games"][data-screen="section"] .work-grid,body[data-section-id="games"][data-screen="section"] .carousel-indicators,body[data-section-id="games"][data-screen="section"] .work-count{display:none!important}
+body[data-section-id="games"][data-screen="section"] .carousel-indicators{display:none!important}
 body[data-view="mobile"][data-screen="section"]:is([data-section-id="dev"],[data-section-id="games"]) .web-update{padding:0}
 body[data-view="mobile"][data-screen="section"]:is([data-section-id="dev"],[data-section-id="games"]) .web-update__card{width:100%;height:100%;min-height:0;max-height:none;padding:24px;border-radius:22px}
 body[data-view="mobile"] .case-detail--art .art-case__image{height:min(52vh,460px);min-height:0}
@@ -420,34 +420,28 @@ body[data-view="mobile"] .case-detail--flowpay.case-detail--mobile-flowpay .case
 /* A single Web project has no carousel to navigate. */
 body[data-screen="section"][data-section-id="dev"] .carousel-indicators{display:none!important}
 
-/* Play — Soundfield only. Existing cases retain their own styles. */
-.case-detail--soundfield{background:#080c0a;padding:clamp(16px,2.4vw,36px)}
-.case-detail--soundfield .soundfield-case{max-width:1560px;min-height:100%;margin:0 auto;display:flex;flex-direction:column;gap:clamp(18px,3vw,44px)}
-.soundfield-case__top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 2px 9px;border-bottom:1px solid rgba(255,255,255,.11)}
-.case-detail--soundfield .case-back{border:0;border-radius:0;background:transparent;padding:0;min-height:32px;font-size:12px}
-.case-detail--soundfield .case-back svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
-.soundfield-case__main{flex:1;display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:clamp(24px,4vw,64px);align-items:center;min-width:0;padding:0 clamp(0px,1vw,18px) clamp(12px,3vh,36px)}
-.soundfield-case__copy{min-width:0;max-width:540px}
-.soundfield-case__description{max-width:48ch;color:rgba(225,237,232,.68);font-size:clamp(13px,1.05vw,16px);line-height:1.65;margin:16px 0 22px}
-.soundfield-case__link{display:inline-flex;align-items:center;gap:10px;color:#f0f7f3;text-decoration:none;font-size:13px;padding:10px 0}
-.soundfield-case__link span{color:#5fe6cc}
-.soundfield-case__link:hover{color:#5fe6cc}
-.soundfield-case__demo{min-width:0}
-.soundfield-case__frame{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:clamp(14px,2vw,24px);background:#08090e;isolation:isolate}
-.soundfield-case__frame iframe{display:block;width:100%;height:100%;position:absolute;inset:0;border:0}
-.soundfield-case__launch{width:100%;height:100%;position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:16px;border:0;background:radial-gradient(ellipse at center,#1d3430,#08090e 70%);color:#eaf5ee;font:500 13px/1.3 var(--font);cursor:pointer}
-.soundfield-case__launch img{display:block;width:clamp(70px,12vw,140px);aspect-ratio:1;border-radius:20%;object-fit:contain}
-.soundfield-case__launch>span{display:inline-flex;gap:10px;align-items:center;padding:11px 16px;border:1px solid rgba(255,255,255,.22);border-radius:100px;background:rgba(255,255,255,.06)}
-.soundfield-case__launch:hover>span{border-color:#5fe6cc}
-.soundfield-case__footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;color:rgba(225,237,232,.54);font-size:11px}
-.soundfield-case__footer button{border:0;background:none;color:#b8d5cb;font:inherit;cursor:pointer;padding:7px 0}
-.soundfield-case [hidden]{display:none!important}
-.soundfield-case :focus-visible{outline:2px solid #5fe6cc;outline-offset:3px}
-body[data-view="mobile"] .soundfield-case__main{display:flex;flex-direction:column;align-items:stretch;gap:18px;padding:0}
-body[data-view="mobile"] .soundfield-case__demo{order:-1}
-body[data-view="mobile"] .soundfield-case__frame{aspect-ratio:16/10}
-body[data-view="mobile"] .soundfield-case__top .case-v1__brand{display:none}
-body[data-view="mobile"] .soundfield-case__copy .case-v1__title{font-size:clamp(36px,10vw,48px);margin:10px 0 8px}
-body[data-view="mobile"] .soundfield-case__copy .case-v1__subtitle{font-size:16px}
-body[data-view="mobile"] .soundfield-case__description{font-size:13px;margin:9px 0 10px}
-body[data-screen="section"][data-section-id="games"] .carousel-indicators{display:none!important}
+
+/* Play: same case-v1 layout as Web / UX/UI. Only the media is interactive. */
+.case-detail--soundfield .case-v1__cover{position:relative;isolation:isolate}
+.case-detail--soundfield .case-v1__visual{flex-direction:column;justify-content:center;gap:12px}
+.case-detail--soundfield .case-v1__cover{aspect-ratio:1.35;height:auto;min-height:0}
+.case-detail--soundfield .soundfield-frame iframe{display:block;width:100%;height:100%;position:absolute;inset:0;border:0}
+.case-detail--soundfield .soundfield-launch{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;width:100%;height:100%;padding:16px;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.case-detail--soundfield .soundfield-launch img{width:min(28%,140px);height:auto;aspect-ratio:1;object-fit:contain}
+.case-detail--soundfield .soundfield-launch span{font-size:13px;border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:12px 18px;background:rgba(255,255,255,.06)}
+.case-detail--soundfield .soundfield-launch:hover span{background:rgba(255,255,255,.15)}
+.case-detail--soundfield .soundfield-footer{display:flex;justify-content:space-between;align-items:center;width:100%;font-size:11px;color:rgba(250,250,255,.65)}
+.case-detail--soundfield .soundfield-footer button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:6px}
+.case-detail--soundfield .case-v1__details{margin-top:0}
+.case-detail--soundfield [hidden]{display:none!important}
+.case-detail--soundfield :focus-visible{outline:2px solid rgba(255,255,255,.85);outline-offset:3px}
+body[data-view="mobile"] .case-detail--soundfield{overflow-y:auto!important;touch-action:pan-y}
+body[data-view="mobile"] .case-detail--soundfield .case-detail__inner.case-v1{height:auto;min-height:100%;overflow:visible;grid-template-rows:38px auto}
+body[data-view="mobile"] .case-detail--soundfield .case-v1__hero{display:flex;flex-direction:column;align-items:stretch;overflow:visible;gap:16px;height:auto}
+body[data-view="mobile"] .case-detail--soundfield .case-v1__copy{width:100%;height:auto;max-width:none;padding:0 2px;order:1}
+body[data-view="mobile"] .case-detail--soundfield .case-v1__visual{display:flex;flex-direction:column;align-items:stretch;height:auto;overflow:visible;gap:8px;order:0}
+body[data-view="mobile"] .case-detail--soundfield .case-v1__cover{display:flex;position:relative;width:100%;height:auto;aspect-ratio:1.35;overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:#0a0a10}
+body[data-view="mobile"] .case-detail--soundfield .case-v1__title{font-size:clamp(34px,10vw,44px);margin:10px 0 8px}
+body[data-view="mobile"] .case-detail--soundfield .case-v1__subtitle{font-size:16px}
+body[data-view="mobile"] .case-detail--soundfield .case-v1__brand{display:none}
+body[data-view="mobile"] .case-detail--soundfield .case-v1__actions .case-v1__prototype{min-height:54px}
