@@ -424,7 +424,12 @@ body[data-screen="section"][data-section-id="dev"] .carousel-indicators{display:
 /* Play: same case-v1 layout as Web / UX/UI. Only the media is interactive. */
 .case-detail--soundfield .case-v1__cover{position:relative;isolation:isolate}
 .case-detail--soundfield .case-v1__visual{flex-direction:column;justify-content:center;gap:12px}
-.case-detail--flowpay.case-detail--soundfield:not(.case-detail--mobile-flowpay) .case-v1__cover{width:100%;aspect-ratio:1.35;height:auto;min-height:0;max-height:calc(100% - 36px);flex:none}
+.case-detail--flowpay.case-detail--soundfield:not(.case-detail--mobile-flowpay) .case-v1__cover{width:100%;aspect-ratio:1.35;height:var(--case-cover-height,auto);min-height:0;max-height:calc(100% - 36px);flex:none}
+.case-detail--soundfield .soundfield-description p{margin:0}
+.case-detail--soundfield .soundfield-description p+p{margin-top:12px}
+body[data-view="desktop"] .case-detail--soundfield .case-v1__visual{position:relative;gap:0}
+body[data-view="desktop"] .case-detail--soundfield .soundfield-footer{position:absolute;top:calc(50% + var(--case-cover-height,0px)/2 + 8px);left:0}
+body[data-view="mobile"] .case-detail--soundfield .soundfield-description p+p{margin-top:9px}
 body[data-view="mobile"] .case-detail--flowpay.case-detail--soundfield:not(.case-detail--mobile-flowpay) .case-v1__cover{max-height:none;aspect-ratio:1.35;height:auto;flex:none}
 .case-detail--soundfield .soundfield-frame iframe{display:block;position:absolute;top:0;left:0;width:1120px;height:830px;max-width:none;max-height:none;border:0;transform-origin:top left;opacity:0;pointer-events:none}
 .case-detail--soundfield .soundfield-frame iframe.is-active{opacity:1;pointer-events:auto}

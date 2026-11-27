@@ -227,6 +227,7 @@ function openFlowPayCase(id, trigger, project) {
   });
   function fitDesktopTextPanel() {
     const panel = document.getElementById("caseTabPanel");
+    if (!panel) return;
     if (!window.matchMedia("(min-width: 761px)").matches || body.dataset.view !== "desktop") {
       panel.style.removeProperty("height");
       return;
@@ -271,6 +272,7 @@ function openFlowPayCase(id, trigger, project) {
   });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitDesktopTextPanel);
   window.addEventListener("resize", function() {
+    if (!caseDetail.classList.contains("case-detail--flowpay") || caseDetail.classList.contains("case-detail--soundfield")) return;
     syncFlowPayMobileLayout(false);
     fitDesktopTextPanel();
     if (isFlowPayMobileLayout()) setMobileStart(); else setDesktopStart();
@@ -326,7 +328,7 @@ function openSoundfieldCase(id, trigger, project) {
   const preview = getPreview(id);
   caseDetail.innerHTML = '<div class="case-detail__inner case-v1">' +
     '<header class="case-v1__top"><button class="case-back" type="button" id="caseBack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17 7 7M7 16V7h9"/></svg><span>Play</span></button><span class="case-v1__brand">SELECTED PROJECT · SOUNDFIELD</span><div class="case-v1__counter" aria-hidden="true"></div></header>' +
-    '<main class="case-v1__hero"><section class="case-v1__copy"><div class="case-v1__identity"><span class="case-v1__eyebrow">PLAY · CREATIVE CODING</span><h1 class="case-v1__title">Soundfield</h1><p class="case-v1__subtitle">Пространство звука, цвета и движения.</p><p class="case-v1__summary">' + escapeHTML(project.description) + '</p></div><div class="case-v1__details"><div class="case-v1__actions"><a class="case-v1__prototype" href="' + escapeHTML(url) + '" target="_blank" rel="noopener noreferrer">Открыть проект <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></div></div></section>' +
+    '<main class="case-v1__hero"><section class="case-v1__copy"><div class="case-v1__identity"><span class="case-v1__eyebrow">PLAY · CREATIVE CODING</span><h1 class="case-v1__title">Soundfield</h1><p class="case-v1__subtitle">Пространство звука, цвета и движения.</p><div class="case-v1__summary soundfield-description">' + project.description.split(/\n\s*\n/).map(function(paragraph) { return '<p>' + escapeHTML(paragraph) + '</p>'; }).join("") + '</div></div><div class="case-v1__details"><div class="case-v1__actions"><a class="case-v1__prototype" href="' + escapeHTML(url) + '" target="_blank" rel="noopener noreferrer">Открыть проект <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></div></div></section>' +
     '<section class="case-v1__visual" aria-label="Интерактивное превью"><div class="case-v1__cover soundfield-frame" id="soundfieldFrame"><button class="soundfield-launch" id="soundfieldLaunch" type="button"><img src="' + escapeHTML(preview) + '" alt=""><span>Попробовать Soundfield</span></button></div><div class="soundfield-footer"><span>Интерактивное превью · 2D / 3D</span><button type="button" id="soundfieldStop" hidden>Остановить</button></div></section></main></div>';
   body.dataset.screen = "project";
   sectionEl.inert = true;
@@ -389,10 +391,34 @@ function openSoundfieldCase(id, trigger, project) {
     stop.hidden = true;
     launch.focus();
   });
+  const copy = caseDetail.querySelector(".case-v1__copy");
+  const identity = caseDetail.querySelector(".case-v1__identity");
+  const actions = caseDetail.querySelector(".case-v1__actions");
+  const visual = caseDetail.querySelector(".case-v1__visual");
+  function fitCover() {
+    if (!frame.isConnected) return;
+    if (body.dataset.view !== "desktop") {
+      frame.style.removeProperty("--case-cover-height");
+      visual.style.removeProperty("--case-cover-height");
+    } else {
+      const contentHeight = actions.getBoundingClientRect().bottom - identity.getBoundingClientRect().top;
+      const height = Math.max(0, Math.min(visual.clientHeight - 36, Math.ceil(contentHeight + 10)));
+      frame.style.setProperty("--case-cover-height", height + "px");
+      visual.style.setProperty("--case-cover-height", height + "px");
+    }
+    fitPreview();
+  }
   const observer = new ResizeObserver(fitPreview);
   observer.observe(frame);
+  const layoutObserver = new ResizeObserver(fitCover);
+  layoutObserver.observe(identity);
+  layoutObserver.observe(actions);
+  layoutObserver.observe(visual);
+  requestAnimationFrame(fitCover);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitCover);
   disposeSoundfieldPreview = function() {
     observer.disconnect();
+    layoutObserver.disconnect();
     if (iframe) iframe.remove();
     iframe = null;
   };
