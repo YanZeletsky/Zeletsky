@@ -315,6 +315,7 @@ function openArtCase(id, trigger, artwork) {
 
 
 /* Play: an isolated, user-activated live preview of the original project. */
+let disposeSoundfieldPreview = null;
 function openSoundfieldCase(id, trigger, project) {
   projectReturn = trigger || document.activeElement;
   caseDetail.onpointerdown = caseDetail.onpointerup = caseDetail.onpointercancel = null;
@@ -334,24 +335,69 @@ function openSoundfieldCase(id, trigger, project) {
   const frame = document.getElementById("soundfieldFrame");
   const launch = document.getElementById("soundfieldLaunch");
   const stop = document.getElementById("soundfieldStop");
-  launch.addEventListener("click", function() {
-    if (frame.querySelector("iframe")) return;
-    const iframe = document.createElement("iframe");
-    iframe.title = "Интерактивное приложение Soundfield";
-    iframe.allow = "fullscreen; autoplay";
-    iframe.allowFullscreen = true;
-    iframe.src = url;
+  const launchLabel = launch.querySelector("span");
+  let iframe = null, ready = false, requested = false;
+  function fitPreview() {
+    if (!iframe || !frame.clientWidth || !frame.clientHeight) return;
+    const viewportWidth = Math.max(1120, frame.clientWidth);
+    const scale = frame.clientWidth / viewportWidth;
+    iframe.style.width = viewportWidth + "px";
+    iframe.style.height = Math.round(frame.clientHeight / scale) + "px";
+    iframe.style.transform = "scale(" + scale + ")";
+  }
+  function showPreview() {
+    if (!iframe || !ready || !requested) return;
     launch.hidden = true;
-    frame.appendChild(iframe);
+    iframe.removeAttribute("aria-hidden");
+    iframe.tabIndex = 0;
+    iframe.classList.add("is-active");
     stop.hidden = false;
+    stop.focus({preventScroll:true});
+  }
+  function preparePreview() {
+    if (iframe) return;
+    ready = false;
+    const child = document.createElement("iframe");
+    iframe = child;
+    child.title = "Интерактивное приложение Soundfield — версия для ПК";
+    child.allow = "fullscreen; autoplay";
+    child.allowFullscreen = true;
+    child.tabIndex = -1;
+    child.setAttribute("aria-hidden", "true");
+    child.addEventListener("load", function() {
+      if (iframe !== child) return;
+      ready = true;
+      launchLabel.textContent = "Попробовать Soundfield";
+      showPreview();
+    }, {once:true});
+    child.src = url;
+    frame.insertBefore(child, launch);
+    fitPreview();
+  }
+  launch.addEventListener("click", function() {
+    requested = true;
+    preparePreview();
+    if (ready) showPreview();
+    else launchLabel.textContent = "Загрузка Soundfield…";
   });
   stop.addEventListener("click", function() {
-    const iframe = frame.querySelector("iframe");
     if (iframe) iframe.remove();
+    iframe = null;
+    ready = requested = false;
+    launchLabel.textContent = "Попробовать Soundfield";
     launch.hidden = false;
     stop.hidden = true;
     launch.focus();
   });
+  const observer = new ResizeObserver(fitPreview);
+  observer.observe(frame);
+  disposeSoundfieldPreview = function() {
+    observer.disconnect();
+    if (iframe) iframe.remove();
+    iframe = null;
+  };
+  // Warm up the original application while the visitor reads the project.
+  preparePreview();
   document.getElementById("caseBack").addEventListener("click", closeProject);
   document.getElementById("caseBack").focus();
 }
@@ -434,6 +480,8 @@ function closeLightboxFlow(lightbox) {
 }
 function closeProjectInstant() {
   if (caseDetail.classList.contains("case-detail--soundfield")) {
+    if (disposeSoundfieldPreview) disposeSoundfieldPreview();
+    disposeSoundfieldPreview = null;
     caseDetail.replaceChildren();
     caseDetail.classList.remove("case-detail--soundfield", "case-detail--flowpay", "case-detail--mobile-flowpay");
     delete caseDetail.dataset.caseId;
